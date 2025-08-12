@@ -1,5 +1,5 @@
-import { MetadataRoute } from 'next'
 import { site } from '@pedroaba/config/portfolio.config'
+import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
   return {

@@ -46,8 +46,10 @@ export default function TechFocusBadge({
   }
 
   const categoryColors = {
-    primary: 'bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-500/30',
-    exploring: 'bg-amber-500/20 text-amber-700 dark:text-amber-300 border-amber-500/30',
+    primary:
+      'bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-500/30',
+    exploring:
+      'bg-amber-500/20 text-amber-700 dark:text-amber-300 border-amber-500/30',
   }
 
   return (

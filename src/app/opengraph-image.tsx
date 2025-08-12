@@ -1,5 +1,5 @@
+import { profile, site } from '@pedroaba/config/portfolio.config'
 import { ImageResponse } from 'next/og'
-import { site, profile } from '@pedroaba/config/portfolio.config'
 
 export const runtime = 'edge'
 export const alt = site.name
@@ -51,7 +51,7 @@ export default async function Image() {
           >
             {profile.name}
           </div>
-          
+
           {/* Role */}
           <div
             style={{
@@ -64,7 +64,7 @@ export default async function Image() {
           >
             Frontend Engineer @ SIBIS
           </div>
-          
+
           {/* Tech Stack */}
           <div
             style={{
@@ -84,7 +84,7 @@ export default async function Image() {
             <span>Python</span>
           </div>
         </div>
-        
+
         {/* Footer */}
         <div
           style={{
@@ -101,6 +101,6 @@ export default async function Image() {
     ),
     {
       ...size,
-    }
+    },
   )
 }

@@ -1,26 +1,33 @@
-import Link from 'next/link'
-import { ExternalLink, Star, GitBranch } from 'lucide-react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@pedroaba/components/ui/card'
+import { AnimationDiv } from '@pedroaba/components/motion/div'
 import { Badge } from '@pedroaba/components/ui/badge'
 import { Button } from '@pedroaba/components/ui/button'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@pedroaba/components/ui/tooltip'
-import { AnimationDiv } from '@pedroaba/components/motion/div'
-import { fadeInUp, hoverScale } from '@pedroaba/lib/animations'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@pedroaba/components/ui/card'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@pedroaba/components/ui/tooltip'
+import { fadeInUp } from '@pedroaba/lib/animations'
 import { formatDate, formatNumber } from '@pedroaba/lib/formatters'
 import type { GitHubRepo } from '@pedroaba/lib/github'
+import { ExternalLink, GitBranch, Star } from 'lucide-react'
+import Link from 'next/link'
 
 interface RepoCardProps {
   repo: GitHubRepo
   priority?: boolean
 }
 
-export default function RepoCard({ repo, priority = false }: RepoCardProps) {
+export default function RepoCard({ repo }: RepoCardProps) {
   return (
-    <AnimationDiv
-      variants={fadeInUp}
-      whileHover={hoverScale}
-      className="h-full"
-    >
+    <AnimationDiv variants={fadeInUp} className="h-full">
       <Card className="h-full transition-all duration-200 hover:shadow-lg hover:border-primary/20 group">
         <CardHeader className="pb-3">
           <div className="flex items-start justify-between gap-2">
@@ -41,9 +48,9 @@ export default function RepoCard({ repo, priority = false }: RepoCardProps) {
                     className="shrink-0 h-8 w-8 p-0 opacity-70 hover:opacity-100"
                     asChild
                   >
-                    <Link 
-                      href={repo.url} 
-                      target="_blank" 
+                    <Link
+                      href={repo.url}
+                      target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View ${repo.name} on GitHub`}
                     >
@@ -58,28 +65,28 @@ export default function RepoCard({ repo, priority = false }: RepoCardProps) {
             </TooltipProvider>
           </div>
         </CardHeader>
-        
+
         <CardContent className="pt-0">
           <div className="space-y-4">
             {/* Stats */}
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               {repo.language && (
                 <div className="flex items-center gap-1">
-                  <div 
-                    className="w-3 h-3 rounded-full" 
+                  <div
+                    className="w-3 h-3 rounded-full"
                     style={{ backgroundColor: getLanguageColor(repo.language) }}
                   />
                   <span>{repo.language}</span>
                 </div>
               )}
-              
+
               {repo.stars > 0 && (
                 <div className="flex items-center gap-1">
                   <Star className="h-3 w-3" />
                   <span>{formatNumber(repo.stars)}</span>
                 </div>
               )}
-              
+
               <div className="flex items-center gap-1">
                 <GitBranch className="h-3 w-3" />
                 <span>{formatDate(repo.updatedAt)}</span>
@@ -90,9 +97,9 @@ export default function RepoCard({ repo, priority = false }: RepoCardProps) {
             {repo.topics.length > 0 && (
               <div className="flex flex-wrap gap-1">
                 {repo.topics.slice(0, 3).map((topic) => (
-                  <Badge 
-                    key={topic} 
-                    variant="secondary" 
+                  <Badge
+                    key={topic}
+                    variant="secondary"
                     className="text-xs px-2 py-0.5"
                   >
                     {topic}
@@ -109,15 +116,15 @@ export default function RepoCard({ repo, priority = false }: RepoCardProps) {
             {/* Homepage link */}
             {repo.homepage && (
               <div className="pt-2">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   className="w-full text-xs"
                   asChild
                 >
-                  <Link 
-                    href={repo.homepage} 
-                    target="_blank" 
+                  <Link
+                    href={repo.homepage}
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <ExternalLink className="h-3 w-3 mr-1" />

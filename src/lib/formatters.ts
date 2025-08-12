@@ -4,12 +4,14 @@
 export function formatDate(dateString: string): string {
   const date = new Date(dateString)
   const now = new Date()
-  const diffInDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))
+  const diffInDays = Math.floor(
+    (now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24),
+  )
 
   if (diffInDays === 0) {
-    return "Today"
+    return 'Today'
   } else if (diffInDays === 1) {
-    return "Yesterday"
+    return 'Yesterday'
   } else if (diffInDays < 7) {
     return `${diffInDays} days ago`
   } else if (diffInDays < 30) {
@@ -22,7 +24,7 @@ export function formatDate(dateString: string): string {
     return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
-      day: 'numeric'
+      day: 'numeric',
     })
   }
 }
@@ -58,7 +60,7 @@ export function truncateText(text: string, maxLength: number): string {
 export function getInitials(name: string): string {
   return name
     .split(' ')
-    .map(word => word[0])
+    .map((word) => word[0])
     .join('')
     .toUpperCase()
     .slice(0, 2)
@@ -78,8 +80,9 @@ export function toKebabCase(str: string): string {
  * Convert a string to title case
  */
 export function toTitleCase(str: string): string {
-  return str.replace(/\w\S*/g, txt => 
-    txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+  return str.replace(
+    /\w\S*/g,
+    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(),
   )
 }
 
