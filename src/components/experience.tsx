@@ -117,7 +117,12 @@ export function ExperienceSection() {
                     Get in Touch
                   </a>
                 </Button>
-                <Button variant="outline" asChild>
+                <Button
+                  variant="outline"
+                  asChild
+                  icon={ExternalLink}
+                  iconPosition="right"
+                >
                   <a
                     href="https://www.linkedin.com/in/pedroaba/"
                     target="_blank"
@@ -125,7 +130,6 @@ export function ExperienceSection() {
                     className="inline-flex items-center gap-2"
                   >
                     View LinkedIn
-                    <ExternalLink className="h-4 w-4" />
                   </a>
                 </Button>
               </div>

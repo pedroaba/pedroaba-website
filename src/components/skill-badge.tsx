@@ -99,8 +99,10 @@ export default function SkillBadge({
               <Button
                 variant="outline"
                 size="sm"
-                className="w-full text-xs h-7"
+                className="w-full"
                 asChild
+                icon={ExternalLink}
+                iconPosition="right"
               >
                 <a
                   href={docs}
@@ -108,7 +110,6 @@ export default function SkillBadge({
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1"
                 >
-                  <ExternalLink className="h-3 w-3" />
                   View Documentation
                 </a>
               </Button>

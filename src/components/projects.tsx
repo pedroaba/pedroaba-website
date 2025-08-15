@@ -147,7 +147,12 @@ export function ProjectsSection() {
             </p>
 
             {/* View All Projects Link */}
-            <Button variant="outline" asChild>
+            <Button
+              variant="outline"
+              asChild
+              icon={ExternalLink}
+              iconPosition="right"
+            >
               <a
                 href="https://github.com/pedroaba"
                 target="_blank"
@@ -155,7 +160,6 @@ export function ProjectsSection() {
                 className="inline-flex items-center gap-2"
               >
                 View All on GitHub
-                <ExternalLink className="h-4 w-4" />
               </a>
             </Button>
           </div>
@@ -239,16 +243,16 @@ export function ProjectsSection() {
                       <div className="pt-2">
                         <Button
                           variant="outline"
-                          size="sm"
                           className="w-full text-xs"
                           asChild
+                          icon={ExternalLink}
+                          iconPosition="right"
                         >
                           <a
                             href={project.homepage}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            <ExternalLink className="h-3 w-3 mr-1" />
                             Live Demo
                           </a>
                         </Button>

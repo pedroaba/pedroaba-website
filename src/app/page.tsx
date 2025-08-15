@@ -30,23 +30,21 @@ export default function Home() {
               Interested in working together? Let&apos;s connect!
             </p>
             <div className="flex justify-center gap-4">
-              <Button asChild>
+              <Button asChild icon={LinkedinIcon}>
                 <a
                   href="https://www.linkedin.com/in/pedroaba/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <LinkedinIcon className="size-4" />
                   LinkedIn
                 </a>
               </Button>
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" icon={GithubIcon}>
                 <a
                   href="https://github.com/pedroaba"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GithubIcon className="size-4" />
                   GitHub
                 </a>
               </Button>

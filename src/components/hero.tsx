@@ -73,14 +73,19 @@ export function HeroSection() {
           {/* CTA Buttons */}
           <AnimationDiv variants={fadeInUp}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <ScrollToButton targetId="projects" className="text-base px-8">
+              <ScrollToButton targetId="projects" className="text-base w-fit">
                 Explore My Work
                 <ArrowRight className="size-4 ml-2" />
               </ScrollToButton>
 
-              <Button variant="outline" className="text-base px-8" asChild>
+              <Button
+                variant="outline"
+                className="text-base px-8"
+                asChild
+                icon={Download}
+                iconPosition="right"
+              >
                 <Link href="/pedro-augusto-cv.pdf" target="_blank">
-                  <Download className="size-4 mr-2" />
                   Download Resume
                 </Link>
               </Button>

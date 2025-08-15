@@ -15,7 +15,7 @@ import { Textarea } from '@pedroaba/components/ui/textarea'
 import { socialLinks } from '@pedroaba/config/social'
 import { fadeInUp, staggerChildren } from '@pedroaba/lib/animations'
 import { cn } from '@pedroaba/lib/utils'
-import { AlertCircle, Check, Send } from 'lucide-react'
+import { Send } from 'lucide-react'
 import { useState } from 'react'
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
@@ -151,29 +151,11 @@ export function ContactSection() {
                         'w-full cursor-pointer',
                         formStatus === 'submitting' && 'cursor-wait',
                       )}
-                      disabled={formStatus === 'submitting'}
+                      isLoading={formStatus === 'submitting'}
+                      icon={Send}
+                      iconPosition="right"
                     >
-                      {formStatus === 'submitting' ? (
-                        <>
-                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
-                          Sending...
-                        </>
-                      ) : formStatus === 'success' ? (
-                        <>
-                          <Check className="size-4" />
-                          Message Sent!
-                        </>
-                      ) : formStatus === 'error' ? (
-                        <>
-                          <AlertCircle className="size-4" />
-                          Try Again
-                        </>
-                      ) : (
-                        <>
-                          <Send className="size-4" />
-                          Send Message
-                        </>
-                      )}
+                      Send Message
                     </Button>
 
                     {formStatus === 'success' && (

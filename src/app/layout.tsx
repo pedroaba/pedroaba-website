@@ -1,10 +1,10 @@
 import './globals.css'
 
-import { Toaster } from '@pedroaba/components/ui/sonner'
 import { site } from '@pedroaba/config/portfolio.config'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { ThemeProvider } from 'next-themes'
+
+import { Providers } from './providers'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -82,15 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="font-sans antialiased min-h-screen bg-background text-foreground">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
