@@ -14,7 +14,6 @@ import {
 } from '@pedroaba/components/ui/form'
 import { Input } from '@pedroaba/components/ui/input'
 import { PasswordField } from '@pedroaba/components/ui/password-field'
-import { authClient } from '@pedroaba/lib/auth.client'
 import { cn } from '@pedroaba/lib/utils'
 import { CircleAlertIcon, Loader } from 'lucide-react'
 import type { ComponentProps } from 'react'
@@ -66,6 +65,8 @@ export function SignUpForm({ className, ...props }: SignUpFormProps) {
   const router = useRouter()
 
   async function handleSignUpWithEmailAndPassword(data: Schema) {
+    console.log(data)
+
     router.push('/auth/sign-in')
   }
 
