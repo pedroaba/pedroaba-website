@@ -125,7 +125,7 @@ export function HeroSection() {
 
           {/* Enhanced CTA Buttons with better styling */}
           <AnimationDiv variants={fadeInUp}>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-14">
               <ScrollToButton
                 targetId="projects"
                 className={cn(
@@ -163,7 +163,7 @@ export function HeroSection() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
               <div className="text-center group">
                 <div className="text-3xl md:text-4xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                  <NumberTicker value={4} delay={2000} />+
+                  <NumberTicker value={4} delay={2} />+
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
                   Years Experience
@@ -171,7 +171,7 @@ export function HeroSection() {
               </div>
               <div className="text-center group">
                 <div className="text-3xl md:text-4xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                  <NumberTicker value={28} delay={2000} />+
+                  <NumberTicker value={28} delay={2} />+
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
                   Technologies
@@ -179,7 +179,7 @@ export function HeroSection() {
               </div>
               <div className="text-center group">
                 <div className="text-3xl md:text-4xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                  <NumberTicker value={15} delay={2000} />+
+                  <NumberTicker value={15} delay={2} />+
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
                   Projects Built
