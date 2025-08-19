@@ -2,6 +2,7 @@
 
 import { useRouter } from '@bprogress/next'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { createUserAction } from '@pedroaba/actions/create-user'
 import { Tooltip } from '@pedroaba/components/tooltip'
 import { Button } from '@pedroaba/components/ui/button'
 import {
@@ -15,10 +16,12 @@ import {
 import { Input } from '@pedroaba/components/ui/input'
 import { PasswordField } from '@pedroaba/components/ui/password-field'
 import { cn } from '@pedroaba/lib/utils'
-import { CircleAlertIcon, Loader } from 'lucide-react'
+import { CircleAlertIcon } from 'lucide-react'
 import type { ComponentProps } from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 import { z } from 'zod'
+import { useServerAction } from 'zsa-react'
 
 const signUpFormSchema = z
   .object({
@@ -58,6 +61,7 @@ type Schema = z.infer<typeof signUpFormSchema>
 type SignUpFormProps = Omit<ComponentProps<'form'>, 'onSubmit'>
 
 export function SignUpForm({ className, ...props }: SignUpFormProps) {
+  const action = useServerAction(createUserAction)
   const form = useForm<Schema>({
     resolver: zodResolver(signUpFormSchema),
   })
@@ -65,8 +69,19 @@ export function SignUpForm({ className, ...props }: SignUpFormProps) {
   const router = useRouter()
 
   async function handleSignUpWithEmailAndPassword(data: Schema) {
-    console.log(data)
+    const [result, resultError] = await action.execute(data)
 
+    if (resultError) {
+      toast.error('Error while creating user')
+      return
+    }
+
+    if (!result?.success) {
+      toast.error(result?.message)
+      return
+    }
+
+    toast.success(result.message)
     router.push('/auth/sign-in')
   }
 
@@ -183,11 +198,8 @@ export function SignUpForm({ className, ...props }: SignUpFormProps) {
         <Button
           type="submit"
           className="w-full"
-          disabled={form.formState.isSubmitting}
+          isLoading={form.formState.isSubmitting}
         >
-          {form.formState.isSubmitting && (
-            <Loader className="size-4 animate-spin" />
-          )}
           Sign up
         </Button>
       </form>
