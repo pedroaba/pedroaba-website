@@ -47,7 +47,7 @@ export function HeroSection() {
       <div className="absolute top-40 right-20 w-1 h-1 bg-secondary/60 rounded-full animate-bounce delay-300" />
       <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce delay-700" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container py-10 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimationDiv
           initial="hidden"
           animate="show"
