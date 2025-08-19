@@ -2,7 +2,8 @@
 
 import { cn } from '@pedroaba/lib/utils'
 import { Moon, SunDim } from 'lucide-react'
-import { useRef, useState } from 'react'
+import { useTheme } from 'next-themes'
+import { useRef } from 'react'
 import { flushSync } from 'react-dom'
 
 import { Button } from '../ui/button'
@@ -12,15 +13,15 @@ type props = {
 }
 
 export const AnimatedThemeToggler = ({ className }: props) => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
+  const { theme, setTheme } = useTheme()
+
   const buttonRef = useRef<HTMLButtonElement | null>(null)
   const changeTheme = async () => {
     if (!buttonRef.current) return
 
     await document.startViewTransition(() => {
       flushSync(() => {
-        const dark = document.documentElement.classList.toggle('dark')
-        setIsDarkMode(dark)
+        setTheme(theme === 'dark' ? 'light' : 'dark')
       })
     }).ready
 
@@ -55,7 +56,11 @@ export const AnimatedThemeToggler = ({ className }: props) => {
       onClick={changeTheme}
       className={cn('cursor-pointer', className)}
     >
-      {isDarkMode ? <SunDim className="size-4" /> : <Moon className="size-4" />}
+      {theme === 'dark' ? (
+        <SunDim className="size-4" />
+      ) : (
+        <Moon className="size-4" />
+      )}
     </Button>
   )
 }
