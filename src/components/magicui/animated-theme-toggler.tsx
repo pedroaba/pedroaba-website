@@ -1,24 +1,33 @@
 'use client'
 
 import { cn } from '@pedroaba/lib/utils'
-import { Moon, SunDim } from 'lucide-react'
+import { Check, Moon, SunDim } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useRef } from 'react'
 import { flushSync } from 'react-dom'
 
 import { Button } from '../ui/button'
+import {
+  DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+} from '../ui/dropdown-menu'
 
 type AnimatedThemeTogglerProps = {
   className?: string
+  asDropdownMenuItem?: boolean
 }
 
 export const AnimatedThemeToggler = ({
   className,
+  asDropdownMenuItem,
 }: AnimatedThemeTogglerProps) => {
   const { theme, setTheme } = useTheme()
 
   const buttonRef = useRef<HTMLButtonElement | null>(null)
-  const changeTheme = async () => {
+  async function changeTheme() {
     if (!buttonRef.current) return
 
     await document.startViewTransition(() => {
@@ -50,6 +59,34 @@ export const AnimatedThemeToggler = ({
       },
     )
   }
+
+  if (asDropdownMenuItem) {
+    return (
+      <DropdownMenuSub>
+        <DropdownMenuSubTrigger>
+          {theme === 'dark' ? (
+            <SunDim className="size-4" />
+          ) : (
+            <Moon className="size-4" />
+          )}
+          <span className="ml-2">Theme</span>
+        </DropdownMenuSubTrigger>
+        <DropdownMenuPortal>
+          <DropdownMenuSubContent sideOffset={10}>
+            <DropdownMenuItem onClick={() => setTheme('dark')}>
+              Dark
+              {theme === 'dark' && <Check className="size-4 ml-auto" />}
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme('light')}>
+              Light
+              {theme === 'light' && <Check className="size-4 ml-auto" />}
+            </DropdownMenuItem>
+          </DropdownMenuSubContent>
+        </DropdownMenuPortal>
+      </DropdownMenuSub>
+    )
+  }
+
   return (
     <Button
       variant="outline"

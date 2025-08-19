@@ -3,6 +3,7 @@
 import { AppProgressProvider as ProgressProvider } from '@bprogress/next'
 import { Toaster } from '@pedroaba/components/ui/sonner'
 import { TooltipProvider } from '@pedroaba/components/ui/tooltip'
+import { SessionProvider } from 'next-auth/react'
 import { ThemeProvider } from 'next-themes'
 import type { ReactNode } from 'react'
 
@@ -14,15 +15,17 @@ export function Providers({ children }: { children: ReactNode | ReactNode[] }) {
       enableSystem
       disableTransitionOnChange
     >
-      <ProgressProvider
-        height="4px"
-        color="var(--primary)"
-        options={{ showSpinner: false }}
-        shallowRouting
-      >
-        <TooltipProvider>{children}</TooltipProvider>
-        <Toaster />
-      </ProgressProvider>
+      <SessionProvider>
+        <ProgressProvider
+          height="4px"
+          color="var(--primary)"
+          options={{ showSpinner: false }}
+          shallowRouting
+        >
+          <TooltipProvider>{children}</TooltipProvider>
+          <Toaster />
+        </ProgressProvider>
+      </SessionProvider>
     </ThemeProvider>
   )
 }
