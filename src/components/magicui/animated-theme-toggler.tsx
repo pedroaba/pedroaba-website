@@ -8,11 +8,13 @@ import { flushSync } from 'react-dom'
 
 import { Button } from '../ui/button'
 
-type props = {
+type AnimatedThemeTogglerProps = {
   className?: string
 }
 
-export const AnimatedThemeToggler = ({ className }: props) => {
+export const AnimatedThemeToggler = ({
+  className,
+}: AnimatedThemeTogglerProps) => {
   const { theme, setTheme } = useTheme()
 
   const buttonRef = useRef<HTMLButtonElement | null>(null)

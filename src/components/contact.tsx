@@ -1,7 +1,4 @@
-'use client'
-
 import { AnimationDiv } from '@pedroaba/components/motion/div'
-import { Button } from '@pedroaba/components/ui/button'
 import {
   Card,
   CardContent,
@@ -9,52 +6,12 @@ import {
   CardHeader,
   CardTitle,
 } from '@pedroaba/components/ui/card'
-import { Input } from '@pedroaba/components/ui/input'
-import { Label } from '@pedroaba/components/ui/label'
-import { Textarea } from '@pedroaba/components/ui/textarea'
 import { socialLinks } from '@pedroaba/config/social'
 import { fadeInUp, staggerChildren } from '@pedroaba/lib/animations'
-import { cn } from '@pedroaba/lib/utils'
-import { Send } from 'lucide-react'
-import { useState } from 'react'
 
-type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
+import { ContactSectionForm } from './contact-section-form'
 
 export function ContactSection() {
-  const [formStatus, setFormStatus] = useState<FormStatus>('idle')
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setFormStatus('submitting')
-
-    // Simulate form submission
-    try {
-      window.open(
-        `mailto:pedr.augustobarbosa.aparecido@gmail.com?subject=${formData.subject}&body=${formData.message}`,
-      )
-
-      setTimeout(() => setFormStatus('idle'), 5000)
-    } catch {
-      setFormStatus('error')
-      setTimeout(() => setFormStatus('idle'), 5000)
-    }
-  }
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
   return (
     <section id="contact" className="py-20 md:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,88 +46,7 @@ export function ContactSection() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Name</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="What should I call you?"
-                          required
-                          disabled={formStatus === 'submitting'}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="your.email@example.com"
-                          required
-                          disabled={formStatus === 'submitting'}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        placeholder="Project collaboration, job opportunity, or just hello?"
-                        required
-                        disabled={formStatus === 'submitting'}
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Share your project details, timeline, budget, or just tell me what's on your mind..."
-                        rows={5}
-                        required
-                        disabled={formStatus === 'submitting'}
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      className={cn(
-                        'w-full cursor-pointer',
-                        formStatus === 'submitting' && 'cursor-wait',
-                      )}
-                      isLoading={formStatus === 'submitting'}
-                      icon={Send}
-                      iconPosition="right"
-                    >
-                      Send Message
-                    </Button>
-
-                    {formStatus === 'success' && (
-                      <p className="text-sm text-green-600 dark:text-green-400 text-center">
-                        Thanks for your message! I&apos;ll get back to you soon.
-                      </p>
-                    )}
-
-                    {formStatus === 'error' && (
-                      <p className="text-sm text-red-600 dark:text-red-400 text-center">
-                        Something went wrong. Please try again or contact me
-                        directly.
-                      </p>
-                    )}
-                  </form>
+                  <ContactSectionForm />
                 </CardContent>
               </Card>
             </AnimationDiv>

@@ -65,13 +65,18 @@ function Button({
       {...props}
     >
       <div className="flex items-center gap-2">
-        {isLoading && <Loader className="size-4 animate-spin" />}
+        {isLoading && iconPosition === 'left' && (
+          <Loader className="size-4 animate-spin" />
+        )}
         {iconPosition === 'left' && !isLoading && Icon && (
           <Icon className="size-4" />
         )}
         {children}
         {iconPosition === 'right' && !isLoading && Icon && (
           <Icon className="size-4" />
+        )}
+        {isLoading && iconPosition === 'right' && (
+          <Loader className="size-4 animate-spin" />
         )}
       </div>
     </Comp>

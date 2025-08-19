@@ -12,9 +12,6 @@ export type AnimationDivProps = HTMLMotionProps<'div'>
  * - Forwards ref and accepts all motion.div props
  * - Respects prefers-reduced-motion or disableAnimation
  */
-export const AnimationDiv = React.forwardRef<HTMLDivElement, AnimationDivProps>(
-  ({ ...props }, ref) => {
-    return <motion.div ref={ref} {...props} />
-  },
-)
-AnimationDiv.displayName = 'AnimationDiv'
+export function AnimationDiv({ ...props }: AnimationDivProps) {
+  return <motion.div {...props} />
+}

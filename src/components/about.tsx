@@ -10,6 +10,30 @@ import { Separator } from '@pedroaba/components/ui/separator'
 import { profile } from '@pedroaba/config/portfolio.config'
 import { Briefcase, GraduationCap, MapPin } from 'lucide-react'
 
+import { NumberTicker } from './magicui/number-ticker'
+
+const driverMeForward = [
+  {
+    title: 'Building for scale',
+    description:
+      'Creating maintainable, scalable applications that grow with your business',
+  },
+  {
+    title: 'Innovation through learning',
+    description: 'Exploring cutting-edge technologies and development patterns',
+  },
+  {
+    title: 'Open source contribution',
+    description:
+      'Sharing knowledge and contributing to the developer community',
+  },
+  {
+    title: 'User-first approach',
+    description:
+      'Bridging the gap between design and development for exceptional UX',
+  },
+]
+
 export function AboutSection() {
   return (
     <section id="about" className="py-20 md:py-32">
@@ -61,46 +85,17 @@ export function AboutSection() {
                       What drives me forward
                     </h4>
                     <ul className="space-y-3 text-muted-foreground">
-                      <li className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
-                        <span>
-                          <strong className="text-foreground">
-                            Building for scale:
-                          </strong>{' '}
-                          Creating maintainable, scalable applications that grow
-                          with your business
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
-                        <span>
-                          <strong className="text-foreground">
-                            Innovation through learning:
-                          </strong>
-                          Exploring cutting-edge technologies and development
-                          patterns
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
-                        <span>
-                          <strong className="text-foreground">
-                            Open source contribution:
-                          </strong>
-                          Sharing knowledge and contributing to the developer
-                          community
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
-                        <span>
-                          <strong className="text-foreground">
-                            User-first approach:
-                          </strong>
-                          Bridging the gap between design and development for
-                          exceptional UX
-                        </span>
-                      </li>
+                      {driverMeForward.map((item) => (
+                        <li className="flex items-start gap-3" key={item.title}>
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
+                          <span>
+                            <strong className="text-foreground">
+                              {item.title}:
+                            </strong>{' '}
+                            {item.description}
+                          </span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
 
@@ -286,19 +281,25 @@ export function AboutSection() {
                 <CardContent>
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div>
-                      <p className="text-2xl font-bold text-primary">4+</p>
+                      <p className="text-2xl font-bold text-primary">
+                        <NumberTicker value={4} delay={2} />+
+                      </p>
                       <p className="text-xs text-muted-foreground">
                         Years Experience
                       </p>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-primary">28+</p>
+                      <p className="text-2xl font-bold text-primary">
+                        <NumberTicker value={28} delay={2} />+
+                      </p>
                       <p className="text-xs text-muted-foreground">
                         Technologies
                       </p>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-primary">15+</p>
+                      <p className="text-2xl font-bold text-primary">
+                        <NumberTicker value={15} delay={2} />+
+                      </p>
                       <p className="text-xs text-muted-foreground">Projects</p>
                     </div>
                     <div>
