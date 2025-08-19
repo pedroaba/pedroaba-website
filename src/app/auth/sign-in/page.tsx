@@ -1,5 +1,6 @@
 import { Code2 } from 'lucide-react'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 import { LoginForm } from './components/form'
 
@@ -31,7 +32,9 @@ export default async function AuthPage() {
               </div>
             </div>
 
-            <LoginForm />
+            <Suspense fallback={<div>Loading...</div>}>
+              <LoginForm />
+            </Suspense>
           </div>
 
           <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
