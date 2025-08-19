@@ -16,6 +16,7 @@ import {
 import Link from 'next/link'
 
 import { AnimatedGridPattern } from './magicui/animated-grid-pattern'
+import { NumberTicker } from './magicui/number-ticker'
 import { ScrollIndicator } from './scroll-indicator'
 
 export function HeroSection() {
@@ -162,7 +163,7 @@ export function HeroSection() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
               <div className="text-center group">
                 <div className="text-3xl md:text-4xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                  4+
+                  <NumberTicker value={4} delay={2000} />+
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
                   Years Experience
@@ -170,7 +171,7 @@ export function HeroSection() {
               </div>
               <div className="text-center group">
                 <div className="text-3xl md:text-4xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                  28+
+                  <NumberTicker value={28} delay={2000} />+
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
                   Technologies
@@ -178,7 +179,7 @@ export function HeroSection() {
               </div>
               <div className="text-center group">
                 <div className="text-3xl md:text-4xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                  15+
+                  <NumberTicker value={15} delay={2000} />+
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
                   Projects Built
