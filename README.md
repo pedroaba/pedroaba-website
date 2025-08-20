@@ -340,9 +340,40 @@ erDiagram
     Client ||--o{ Project : "has"
     
     %% Enums
-    %% EntityState: ACTIVE, DELETED
-    %% ClientStatus: ACTIVE, INACTIVE, POTENTIAL, ARCHIVED
-    %% ProjectStatus: BACKLOG, PLANNING, TODO, IN_PROGRESS, REVIEW, COMPLETED, ON_HOLD, CANCELLED
+    EntityState {
+        ACTIVE
+        DELETED
+    }
+    
+    ClientStatus {
+        ACTIVE
+        INACTIVE
+        POTENTIAL
+        ARCHIVED
+    }
+    
+    ProjectStatus {
+        BACKLOG
+        PLANNING
+        TODO
+        IN_PROGRESS
+        REVIEW
+        COMPLETED
+        ON_HOLD
+        CANCELLED
+    }
+    
+    %% Enum Relationships
+    User }o--|| EntityState : "state"
+    Account }o--|| EntityState : "state"
+    Session }o--|| EntityState : "state"
+    VerificationToken }o--|| EntityState : "state"
+    Authenticator }o--|| EntityState : "state"
+    Organization }o--|| EntityState : "state"
+    Client }o--|| EntityState : "state"
+    Client }o--|| ClientStatus : "status"
+    Project }o--|| EntityState : "state"
+    Project }o--|| ProjectStatus : "status"
 ```
 
 ### Database Setup
