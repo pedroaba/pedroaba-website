@@ -222,6 +222,129 @@ enum ProjectStatus {
 }
 ```
 
+### Database Schema Diagram
+
+```mermaid
+erDiagram
+    User {
+        string id PK
+        string name
+        string email UK
+        datetime emailVerified
+        string image
+        string password
+        string organizationId FK
+        datetime createdAt
+        datetime updatedAt
+        enum state
+    }
+
+    Account {
+        string userId FK
+        string type
+        string provider
+        string providerAccountId
+        string refresh_token
+        string access_token
+        int expires_at
+        string token_type
+        string scope
+        string id_token
+        string session_state
+        datetime createdAt
+        datetime updatedAt
+        enum state
+    }
+
+    Session {
+        string sessionToken UK
+        string userId FK
+        datetime expires
+        datetime createdAt
+        datetime updatedAt
+        enum state
+    }
+
+    VerificationToken {
+        string identifier
+        string token
+        datetime expires
+        enum state
+    }
+
+    Authenticator {
+        string credentialID UK
+        string userId FK
+        string providerAccountId
+        string credentialPublicKey
+        int counter
+        string credentialDeviceType
+        boolean credentialBackedUp
+        string transports
+        enum state
+    }
+
+    Organization {
+        string id PK
+        string name
+        string slug UK
+        datetime createdAt
+        datetime updatedAt
+        enum state
+    }
+
+    Client {
+        string id PK
+        string name
+        string email
+        string phone
+        string company
+        string website
+        string address
+        string notes
+        enum status
+        string taxId
+        string taxName
+        datetime createdAt
+        datetime updatedAt
+        enum state
+    }
+
+    Project {
+        string id PK
+        string name
+        string description
+        enum status
+        decimal budget
+        decimal hourlyRate
+        decimal totalHours
+        decimal totalValue
+        datetime startDate
+        datetime endDate
+        datetime dueDate
+        string repository
+        string liveUrl
+        string figmaUrl
+        string[] technologies
+        string clientId FK
+        datetime createdAt
+        datetime updatedAt
+        enum state
+    }
+
+    %% Relationships
+    User ||--o{ Account : "has"
+    User ||--o{ Session : "has"
+    User ||--o{ Authenticator : "has"
+    User }o--|| Organization : "belongs_to"
+    Client ||--o{ Project : "has"
+    
+    %% Enums
+    %% EntityState: ACTIVE, DELETED
+    %% ClientStatus: ACTIVE, INACTIVE, POTENTIAL, ARCHIVED
+    %% ProjectStatus: BACKLOG, PLANNING, TODO, IN_PROGRESS, REVIEW, COMPLETED, ON_HOLD, CANCELLED
+```
+
 ### Database Setup
 
 1. **Install Prisma:**
