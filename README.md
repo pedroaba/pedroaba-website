@@ -332,13 +332,6 @@ erDiagram
         enum state
     }
 
-    %% Relationships
-    User ||--o{ Account : "has"
-    User ||--o{ Session : "has"
-    User ||--o{ Authenticator : "has"
-    User }o--|| Organization : "belongs_to"
-    Client ||--o{ Project : "has"
-    
     %% Enums
     EntityState {
         ACTIVE
@@ -362,6 +355,13 @@ erDiagram
         ON_HOLD
         CANCELLED
     }
+    
+    %% Relationships
+    User ||--o{ Account : "has"
+    User ||--o{ Session : "has"
+    User ||--o{ Authenticator : "has"
+    User }o--|| Organization : "belongs_to"
+    Client ||--o{ Project : "has"
     
     %% Enum Relationships
     User }o--|| EntityState : "state"
