@@ -1,5 +1,3 @@
-import './globals.css'
-
 import { site } from '@pedroaba/config/portfolio.config'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'

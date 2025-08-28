@@ -7,6 +7,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
+enum EntityState {
+  ACTIVE
+  DELETED
+}
+
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -25,6 +30,8 @@ model User {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  state EntityState @default(ACTIVE)
 
   @@map("users")
 }
@@ -47,6 +54,8 @@ model Account {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  state EntityState @default(ACTIVE)
+
   @@id([provider, providerAccountId])
   @@map("accounts")
 }
@@ -60,6 +69,8 @@ model Session {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
+  state EntityState @default(ACTIVE)
+
   @@map("sessions")
 }
 
@@ -67,6 +78,8 @@ model VerificationToken {
   identifier String
   token      String
   expires    DateTime
+
+  state EntityState @default(ACTIVE)
 
   @@id([identifier, token])
   @@map("verification_tokens")
@@ -85,6 +98,8 @@ model Authenticator {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  state EntityState @default(ACTIVE)
+
   @@id([userId, credentialID])
   @@map("authenticators")
 }
@@ -99,5 +114,83 @@ model Organization {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  state EntityState @default(ACTIVE)
+
   @@map("organizations")
+}
+
+enum ClientStatus {
+  ACTIVE
+  INACTIVE
+  POTENTIAL
+  ARCHIVED
+}
+
+model Client {
+  id      String  @id @default(cuid())
+  name    String
+  email   String?
+  phone   String?
+  company String?
+  website String?
+  address String?
+  notes   String?
+
+  status ClientStatus @default(ACTIVE)
+
+  taxId   String? @map("tax_id") // CNPJ/CPF (Brazilian company/individual tax ID)
+  taxName String? @map("tax_name") // Corporate name
+
+  projects Project[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  state EntityState @default(ACTIVE)
+
+  @@map("clients")
+}
+
+enum ProjectStatus {
+  BACKLOG
+  PLANNING
+  TODO
+  IN_PROGRESS
+  REVIEW
+  COMPLETED
+  ON_HOLD
+  CANCELLED
+}
+
+model Project {
+  id          String  @id @default(cuid())
+  name        String
+  description String?
+
+  status ProjectStatus @default(BACKLOG)
+
+  budget     Decimal? @default(0) @db.Decimal(10, 2) // Initial budget
+  hourlyRate Decimal? @default(20.00) @map("hourly_rate") @db.Decimal(10, 2) // Hourly rate
+  totalHours Decimal? @default(0) @map("total_hours") @db.Decimal(8, 2) // Total hours worked
+  totalValue Decimal? @default(0) @map("total_value") @db.Decimal(10, 2) // Total project value
+
+  startDate DateTime? @map("start_date")
+  endDate   DateTime? @map("end_date")
+  dueDate   DateTime? @map("due_date")
+
+  repository String? // Repository link
+  liveUrl    String? @map("live_url") // Project production URL
+  figmaUrl   String? @map("figma_url") // Figma link
+
+  technologies String[]
+
+  clientId String @map("client_id")
+  client   Client @relation(fields: [clientId], references: [id], onDelete: Restrict)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  state EntityState @default(ACTIVE)
+
+  @@map("projects")
 }

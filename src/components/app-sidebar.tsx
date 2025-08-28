@@ -5,15 +5,22 @@ import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarSeparator,
 } from '@pedroaba/components/ui/sidebar'
-import { Code2 } from 'lucide-react'
+import { Code2, Home, PanelsTopLeft, Users } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import * as React from 'react'
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname()
+
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
@@ -33,7 +40,67 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent></SidebarContent>
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem key="dashboard">
+                <SidebarMenuButton
+                  asChild
+                  isActive={
+                    pathname === '/dashboard' &&
+                    pathname.startsWith('/dashboard')
+                  }
+                >
+                  <Link href="/dashboard">
+                    <Home />
+                    <span>Dashboard</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarSeparator className="-my-2" />
+
+        <SidebarGroup>
+          <SidebarGroupContent className="space-y-2">
+            <SidebarMenu>
+              <SidebarMenuItem key="projects">
+                <SidebarMenuButton
+                  asChild
+                  isActive={
+                    pathname === '/dashboard/projects' &&
+                    pathname.startsWith('/dashboard/projects')
+                  }
+                >
+                  <Link href="/dashboard/projects">
+                    <PanelsTopLeft />
+                    <span>Projects</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+            <SidebarMenu>
+              <SidebarMenuItem key="projects">
+                <SidebarMenuButton
+                  asChild
+                  isActive={
+                    pathname === '/dashboard/clients' &&
+                    pathname.startsWith('/dashboard/clients')
+                  }
+                >
+                  <Link href="/dashboard/clients">
+                    <Users />
+                    <span>Clients</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
       <SidebarFooter>
         <NavUser />
       </SidebarFooter>

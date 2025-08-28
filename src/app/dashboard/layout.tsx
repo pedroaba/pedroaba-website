@@ -1,3 +1,5 @@
+import '@pedroaba/app/internal-global.css'
+
 import { AppSidebar } from '@pedroaba/components/app-sidebar'
 import { SidebarInset, SidebarProvider } from '@pedroaba/components/ui/sidebar'
 import type { ReactNode } from 'react'

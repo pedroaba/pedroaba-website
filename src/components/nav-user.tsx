@@ -114,9 +114,9 @@ export function NavUser() {
             <DropdownMenuSeparator />
             <DropdownMenuItem
               onClick={() => signOut({ redirectTo: '/auth/sign-in' })}
-              className="text-destructive"
+              className="!text-destructive"
             >
-              <LogOut className="text-destructive" />
+              <LogOut className="text-destructive hover:!text-destructive" />
               Log out
             </DropdownMenuItem>
           </DropdownMenuContent>
