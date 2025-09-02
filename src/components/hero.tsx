@@ -51,7 +51,7 @@ export function HeroSection() {
           <AnimationDiv variants={fadeInUp} className="mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
               <Sparkles className="size-4 animate-pulse" />
-              Available for new opportunities
+              Disponível para novas oportunidades
             </div>
           </AnimationDiv>
 
@@ -59,15 +59,15 @@ export function HeroSection() {
           <AnimationDiv variants={fadeInUp}>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 leading-[0.9]">
               <span className="bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent">
-                Crafting
+                Criando
               </span>
               <br />
               <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-pulse">
-                exceptional
+                experiências
               </span>
               <br />
               <span className="bg-gradient-to-r from-foreground via-foreground to-secondary bg-clip-text text-transparent">
-                experiences
+                excepcionais
               </span>
             </h1>
           </AnimationDiv>
@@ -75,12 +75,20 @@ export function HeroSection() {
           {/* Enhanced Subtitle with better typography */}
           <AnimationDiv variants={fadeInUp}>
             <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Frontend Engineer passionate about building{' '}
-              <span className="text-foreground font-semibold">performant</span>,{' '}
-              <span className="text-foreground font-semibold">accessible</span>,
-              and{' '}
-              <span className="text-foreground font-semibold">delightful</span>{' '}
-              web applications
+              Transformo{' '}
+              <span className="text-foreground font-semibold">
+                ideias complexas
+              </span>{' '}
+              em{' '}
+              <span className="text-foreground font-semibold">
+                soluções elegantes
+              </span>
+              . Criando{' '}
+              <span className="text-foreground font-semibold">
+                experiências digitais
+              </span>{' '}
+              que{' '}
+              <span className="text-foreground font-semibold">inspiram</span>.
             </p>
           </AnimationDiv>
 
@@ -97,7 +105,7 @@ export function HeroSection() {
               </Badge>
               <Badge variant="outline" className="text-sm px-4 py-2">
                 <GraduationCap className="size-3 mr-1" />
-                Software Engineering Student
+                Estudando Engenharia de Software
               </Badge>
             </div>
           </AnimationDiv>
@@ -105,14 +113,14 @@ export function HeroSection() {
           {/* Enhanced Tech Stack Preview */}
           <AnimationDiv variants={fadeInUp}>
             <p className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-              Specialized in{' '}
+              Especializado em{' '}
               <span className="text-primary font-semibold">React</span>,{' '}
-              <span className="text-primary font-semibold">Next.js</span>, and{' '}
+              <span className="text-primary font-semibold">Next.js</span> e{' '}
               <span className="text-primary font-semibold">TypeScript</span>.
-              Exploring{' '}
-              <span className="text-secondary font-semibold">Rust</span> for
-              high-performance applications. Building the future, one component
-              at a time.
+              Explorando{' '}
+              <span className="text-secondary font-semibold">Rust</span> para
+              aplicações de alta performance. Construindo o futuro, um
+              componente por vez.
             </p>
           </AnimationDiv>
 
@@ -120,7 +128,7 @@ export function HeroSection() {
           <AnimationDiv variants={fadeInUp}>
             <div className="mb-14">
               <p className="text-lg text-muted-foreground mb-6">
-                Let&apos;s connect and build something amazing together
+                Vamos nos conectar e construir algo incrível juntos
               </p>
               <div className="flex flex-wrap justify-center items-center gap-4">
                 {socialLinks.map((social) => (
@@ -165,7 +173,7 @@ export function HeroSection() {
                   <NumberTicker value={4} delay={2} />+
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
-                  Years Experience
+                  Anos de experiencia
                 </div>
               </div>
               <div className="text-center group">
@@ -173,7 +181,7 @@ export function HeroSection() {
                   <NumberTicker value={28} delay={2} />+
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
-                  Technologies
+                  Tecnologias
                 </div>
               </div>
               <div className="text-center group">
@@ -181,7 +189,7 @@ export function HeroSection() {
                   <NumberTicker value={15} delay={2} />+
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
-                  Projects Built
+                  Projetos construídos
                 </div>
               </div>
               <div className="text-center group">
@@ -189,7 +197,7 @@ export function HeroSection() {
                   ∞
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">
-                  Learning
+                  Aprendizagem
                 </div>
               </div>
             </div>

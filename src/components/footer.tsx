@@ -18,21 +18,29 @@ export function FooterSection() {
             <div className="space-y-4">
               <ScrollToTop className="">PA</ScrollToTop>
               <p className="text-sm text-muted-foreground max-w-xs">
-                {profile.name} - Frontend Engineer crafting delightful web
-                experiences with modern technologies.
+                {profile.name} - Engenheiro Frontend criando experiências web
+                com tecnologias modernas.
               </p>
             </div>
 
             {/* Quick Links */}
             <div className="space-y-4">
-              <h4 className="font-semibold">Quick Links</h4>
+              <h4 className="font-semibold">Links Rápidos</h4>
               <nav className="flex flex-col space-y-2">
                 {[
-                  { name: 'About', href: '#about' },
-                  { name: 'Skills', href: '#skills' },
-                  { name: 'Projects', href: '#projects' },
-                  { name: 'Experience', href: '#experience' },
-                  { name: 'Contact', href: '#contact' },
+                  { name: 'Sobre', href: '#about' },
+                  { name: 'Habilidades', href: '#skills' },
+                  { name: 'Projetos Clientes', href: '#client-projects' },
+                  { name: 'Projetos Pessoais', href: '#projects' },
+                  {
+                    name: 'Experiência Profissional',
+                    href: '#professional-experience',
+                  },
+                  {
+                    name: 'Experiência Acadêmica',
+                    href: '#academic-experience',
+                  },
+                  { name: 'Contato', href: '#contact' },
                 ].map((link) => (
                   <NavButton key={link.name} href={link.href} className="">
                     {link.name}
@@ -43,7 +51,7 @@ export function FooterSection() {
 
             {/* Connect */}
             <div className="space-y-4">
-              <h4 className="font-semibold">Connect</h4>
+              <h4 className="font-semibold">Conecte-se</h4>
               <div className="flex space-x-2">
                 <Button
                   variant="ghost"
@@ -87,7 +95,7 @@ export function FooterSection() {
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">
-                Available for freelance projects and full-time opportunities.
+                Disponível para projetos freelancer e oportunidades de emprego.
               </p>
             </div>
           </div>
@@ -98,10 +106,10 @@ export function FooterSection() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="flex flex-col sm:flex-row items-center gap-1 text-sm text-muted-foreground">
               <span>
-                © {currentYear} {profile.name}. Made with
+                © {currentYear} {profile.name}. Feito com
               </span>
               <Heart className="size-3 text-red-500 fill-current" />
-              <span>using Next.js, shadcn/ui, and Framer Motion.</span>
+              <span>usando Next.js, shadcn/ui e Framer Motion.</span>
             </div>
 
             <div className="flex items-center gap-4 text-xs text-muted-foreground">
@@ -109,7 +117,7 @@ export function FooterSection() {
                 href={site.url}
                 className="hover:text-foreground transition-colors"
               >
-                pedroaba.dev
+                pedroaba.com.br
               </a>
             </div>
           </div>

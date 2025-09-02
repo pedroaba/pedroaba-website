@@ -93,7 +93,7 @@ src/
    GITHUB_TOKEN=your_github_token_here
 
    # Site Configuration  
-   NEXT_PUBLIC_SITE_URL=https://pedroaba.dev
+   NEXT_PUBLIC_SITE_URL=https://pedroaba.com.br
 
    # Database Configuration
    DATABASE_URL="postgresql://username:password@localhost:5432/portfolio_db"

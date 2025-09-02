@@ -1,130 +1,130 @@
 export const skillGroups = {
   core: {
-    title: 'Core Technologies',
+    title: 'Tecnologias Principais',
     skills: [
       {
         name: 'JavaScript',
         level: 'expert',
         description:
-          'Dynamic programming language for web development. Essential for creating interactive websites and modern web applications.',
-        experience: '4+ years',
+          'Linguagem de programação dinâmica para desenvolvimento web. Essencial para criar sites interativos e aplicações web modernas.',
+        experience: '4+ anos',
         docs: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
       },
       {
         name: 'TypeScript',
         level: 'expert',
         description:
-          'JavaScript with static type definitions. Enhances code reliability and developer experience in large applications.',
-        experience: '3+ years',
+          'JavaScript com definições de tipos estáticos. Melhora a confiabilidade do código e a experiência do desenvolvedor em aplicações grandes.',
+        experience: '3+ anos',
         docs: 'https://www.typescriptlang.org/docs/',
       },
       {
         name: 'Python',
         level: 'expert',
         description:
-          'Versatile programming language used for web development, data analysis, automation, and backend services.',
-        experience: '4+ years',
+          'Linguagem de programação versátil usada para desenvolvimento web, análise de dados, automação e serviços backend.',
+        experience: '4+ anos',
         docs: 'https://docs.python.org/3/',
       },
       {
         name: 'HTML/CSS',
         level: 'expert',
         description:
-          'Fundamental web technologies for structuring and styling web pages. Foundation of all web development.',
-        experience: '4+ years',
+          'Tecnologias web fundamentais para estruturar e estilizar páginas web. Base de todo desenvolvimento web.',
+        experience: '4+ anos',
         docs: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
       },
       {
         name: 'React',
         level: 'expert',
         description:
-          'Popular JavaScript library for building user interfaces with component-based architecture and virtual DOM.',
-        experience: '4+ years',
+          'Biblioteca JavaScript popular para construir interfaces de usuário com arquitetura baseada em componentes e DOM virtual.',
+        experience: '4+ anos',
         docs: 'https://react.dev/',
       },
       {
         name: 'Next.js',
         level: 'expert',
         description:
-          'React framework with server-side rendering, static generation, and full-stack capabilities for production apps.',
-        experience: '3+ years',
+          'Framework React com renderização do lado do servidor, geração estática e capacidades full-stack para aplicações de produção.',
+        experience: '3+ anos',
         docs: 'https://nextjs.org/docs',
       },
       {
         name: 'Tailwind CSS',
         level: 'expert',
         description:
-          'Utility-first CSS framework for rapidly building custom user interfaces with consistent design systems.',
-        experience: '2+ years',
+          'Framework CSS utility-first para construir rapidamente interfaces de usuário personalizadas com sistemas de design consistentes.',
+        experience: '2+ anos',
         docs: 'https://tailwindcss.com/docs',
       },
     ],
   },
   backend: {
-    title: 'Backend & Data',
+    title: 'Backend & Dados',
     skills: [
       {
         name: 'Flask',
         level: 'intermediate',
         description:
-          'Lightweight Python web framework for building APIs and web applications with minimal setup and maximum flexibility.',
-        experience: '1+ years',
+          'Framework web Python leve para construir APIs e aplicações web com configuração mínima e máxima flexibilidade.',
+        experience: '1+ ano',
         docs: 'https://flask.palletsprojects.com/',
       },
       {
         name: 'Django',
         level: 'intermediate',
         description:
-          'High-level Python web framework with built-in admin interface, ORM, and batteries-included philosophy.',
-        experience: '2 years',
+          'Framework web Python de alto nível com interface de administração integrada, ORM e filosofia "baterias incluídas".',
+        experience: '2 anos',
         docs: 'https://docs.djangoproject.com/',
       },
       {
         name: 'Spring Boot',
         level: 'learning',
         description:
-          'Java framework that simplifies building production-ready applications with embedded servers and auto-configuration.',
-        experience: '3 months',
+          'Framework Java que simplifica a construção de aplicações prontas para produção com servidores embarcados e auto-configuração.',
+        experience: '3 meses',
         docs: 'https://spring.io/projects/spring-boot',
       },
       {
         name: 'Prisma',
         level: 'intermediate',
         description:
-          'Modern database toolkit with type-safe client, migrations, and intuitive data modeling for TypeScript & Node.js.',
-        experience: '3+ year',
+          'Kit de ferramentas de banco de dados moderno com cliente type-safe, migrações e modelagem de dados intuitiva para TypeScript & Node.js.',
+        experience: '3+ anos',
         docs: 'https://www.prisma.io/docs',
       },
       {
         name: 'Pandas',
         level: 'intermediate',
         description:
-          'Powerful Python library for data manipulation and analysis, providing data structures and operations for numerical tables.',
-        experience: '3+ years',
+          'Biblioteca Python poderosa para manipulação e análise de dados, fornecendo estruturas de dados e operações para tabelas numéricas.',
+        experience: '3+ anos',
         docs: 'https://pandas.pydata.org/docs/',
       },
       {
         name: 'C/C++',
         level: 'intermediate',
         description:
-          'Low-level programming languages for system programming, embedded systems, and performance-critical applications.',
-        experience: '1+ years',
+          'Linguagens de programação de baixo nível para programação de sistemas, sistemas embarcados e aplicações críticas de performance.',
+        experience: '1+ ano',
         docs: 'https://en.cppreference.com/',
       },
       {
         name: 'C#',
         level: 'intermediate',
         description:
-          'Object-oriented programming language developed by Microsoft for building Windows applications and web services.',
-        experience: '1+ year',
+          'Linguagem de programação orientada a objetos desenvolvida pela Microsoft para construir aplicações Windows e serviços web.',
+        experience: '1+ ano',
         docs: 'https://docs.microsoft.com/en-us/dotnet/csharp/',
       },
       {
         name: 'Java',
         level: 'intermediate',
         description:
-          "Enterprise-grade programming language known for 'write once, run anywhere' philosophy and robust ecosystem.",
-        experience: '1+ years',
+          'Linguagem de programação de nível empresarial conhecida pela filosofia "escreva uma vez, execute em qualquer lugar" e ecossistema robusto.',
+        experience: '1+ ano',
         docs: 'https://docs.oracle.com/javase/tutorial/',
       },
     ],
@@ -136,109 +136,109 @@ export const skillGroups = {
         name: 'React Native',
         level: 'intermediate',
         description:
-          'Cross-platform mobile development framework using React to build native iOS and Android applications.',
-        experience: '3+ year',
+          'Framework de desenvolvimento mobile multiplataforma usando React para construir aplicações nativas iOS e Android.',
+        experience: '3+ anos',
         docs: 'https://reactnative.dev/docs/getting-started',
       },
       {
         name: 'Expo',
         level: 'intermediate',
         description:
-          'Platform for universal React applications with tools and services for React Native development and deployment.',
-        experience: '3+ year',
+          'Plataforma para aplicações React universais com ferramentas e serviços para desenvolvimento e deploy React Native.',
+        experience: '3+ anos',
         docs: 'https://docs.expo.dev/',
       },
       {
         name: 'Electron',
         level: 'intermediate',
         description:
-          'Framework for building cross-platform desktop applications using web technologies like HTML, CSS, and JavaScript.',
-        experience: '2+ year',
+          'Framework para construir aplicações desktop multiplataforma usando tecnologias web como HTML, CSS e JavaScript.',
+        experience: '2+ anos',
         docs: 'https://www.electronjs.org/docs',
       },
       {
         name: 'PySide6/PyQt6',
         level: 'intermediate',
         description:
-          'Python bindings for Qt framework, enabling creation of cross-platform desktop applications with native look.',
-        experience: '2+ year',
+          'Bindings Python para o framework Qt, permitindo criação de aplicações desktop multiplataforma com aparência nativa.',
+        experience: '2+ anos',
         docs: 'https://doc.qt.io/qtforpython/',
       },
       {
         name: 'Tauri',
         level: 'learning',
         description:
-          'Framework for building lightweight, secure desktop applications with web frontend and Rust backend.',
-        experience: '3 months',
+          'Framework para construir aplicações desktop leves e seguras com frontend web e backend Rust.',
+        experience: '3 meses',
         docs: 'https://tauri.app/v1/guides/',
       },
       {
         name: 'Windows Forms',
         level: 'learning',
         description:
-          'GUI class library for .NET Framework, providing platform for developing Windows desktop applications.',
-        experience: '4 months',
+          'Biblioteca de classes GUI para .NET Framework, fornecendo plataforma para desenvolver aplicações desktop Windows.',
+        experience: '4 meses',
         docs: 'https://docs.microsoft.com/en-us/dotnet/desktop/winforms/',
       },
       {
         name: 'WinUI3',
         level: 'learning',
         description:
-          'Modern native UI platform for Windows apps with Fluent Design System and XAML-based development.',
-        experience: '3 months',
+          'Plataforma UI nativa moderna para aplicações Windows com Fluent Design System e desenvolvimento baseado em XAML.',
+        experience: '3 meses',
         docs: 'https://docs.microsoft.com/en-us/windows/apps/winui/',
       },
     ],
   },
   learning: {
-    title: 'Currently Learning',
+    title: 'Aprendendo Atualmente',
     skills: [
       {
         name: 'Rust',
         level: 'learning',
         description:
-          'Systems programming language focused on safety, speed, and concurrency without garbage collection.',
-        experience: '6 months',
+          'Linguagem de programação de sistemas focada em segurança, velocidade e concorrência sem coleta de lixo.',
+        experience: '6 meses',
         docs: 'https://doc.rust-lang.org/',
       },
       {
         name: 'Django',
         level: 'learning',
         description:
-          'High-level Python web framework with built-in admin interface, ORM, and batteries-included philosophy.',
-        experience: '2 years',
+          'Framework web Python de alto nível com interface de administração integrada, ORM e filosofia "baterias incluídas".',
+        experience: '2 anos',
         docs: 'https://docs.djangoproject.com/',
       },
       {
         name: 'Spring Boot',
         level: 'learning',
         description:
-          'Java framework that simplifies building production-ready applications with embedded servers and auto-configuration.',
-        experience: '6 months',
+          'Framework Java que simplifica a construção de aplicações prontas para produção com servidores embarcados e auto-configuração.',
+        experience: '6 meses',
         docs: 'https://spring.io/projects/spring-boot',
       },
       {
         name: 'Tauri',
         level: 'learning',
         description:
-          'Framework for building lightweight, secure desktop applications with web frontend and Rust backend.',
-        experience: '3 months',
+          'Framework para construir aplicações desktop leves e seguras com frontend web e backend Rust.',
+        experience: '3 meses',
         docs: 'https://tauri.app/v1/guides/',
       },
       {
         name: 'Windows Forms',
         level: 'learning',
         description:
-          'GUI class library for .NET Framework, providing platform for developing Windows desktop applications.',
-        experience: '3 months',
+          'Biblioteca de classes GUI para .NET Framework, fornecendo plataforma para desenvolver aplicações desktop Windows.',
+        experience: '3 meses',
         docs: 'https://docs.microsoft.com/en-us/dotnet/desktop/winforms/',
       },
       {
         name: 'WinUI3',
         level: 'learning',
         description:
-          'Modern native UI platform for Windows apps with Fluent Design System and XAML-based development.',
-        experience: '3 months',
+          'Plataforma UI nativa moderna para aplicações Windows com Fluent Design System e desenvolvimento baseado em XAML.',
+        experience: '3 meses',
         docs: 'https://docs.microsoft.com/en-us/windows/apps/winui/',
       },
     ],

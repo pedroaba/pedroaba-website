@@ -23,11 +23,11 @@ export function SkillsSection() {
           {/* Section Header */}
           <AnimationDiv className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Skills & Technologies
+              Habilidades & Tecnologias
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive overview of the technologies I work with daily,
-              and those I&apos;m currently exploring.
+              Uma visão abrangente das tecnologias com as quais trabalho
+              diariamente e aquelas que estou explorando atualmente.
             </p>
           </AnimationDiv>
 
@@ -63,15 +63,15 @@ export function SkillsSection() {
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/30" />
-                <span className="text-muted-foreground">Expert</span>
+                <span className="text-muted-foreground">Especialista</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-blue-500/20 border border-blue-500/30" />
-                <span className="text-muted-foreground">Intermediate</span>
+                <span className="text-muted-foreground">Intermediário</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-amber-500/20 border border-amber-500/30" />
-                <span className="text-muted-foreground">Learning</span>
+                <span className="text-muted-foreground">Aprendendo</span>
               </div>
             </div>
           </AnimationDiv>

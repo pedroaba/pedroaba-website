@@ -9,15 +9,14 @@ import {
 } from '@pedroaba/components/ui/card'
 import { ExternalLink, GitBranch } from 'lucide-react'
 
-// Mock data para projetos em destaque
 const featuredProjects = [
   {
     id: 1,
     name: 'Asagg',
     description:
-      'Library to automatically generate getters, setters, and other access methods for private attributes, inspired by Lombok (Java).',
+      'Biblioteca para gerar automaticamente getters, setters e outros métodos de acesso para atributos privados, inspirada no Lombok (Java).',
     language: 'Python',
-    topics: ['automation', 'code-generation', 'getters-setters'],
+    topics: ['automação', 'geração-de-código', 'getters-setters'],
     url: 'https://github.com/pedroaba/Asagg',
     homepage: 'https://asagg.readthedocs.io/en/latest',
     updatedAt: '2023-11-09',
@@ -26,7 +25,7 @@ const featuredProjects = [
     id: 2,
     name: 'taurius-ytd',
     description:
-      'Cross-platform desktop application built with Tauri for downloading YouTube videos in various formats.',
+      'Aplicação desktop multiplataforma construída com Tauri para baixar vídeos do YouTube em vários formatos.',
     language: 'TypeScript',
     topics: [
       'YouTube',
@@ -34,7 +33,7 @@ const featuredProjects = [
       'Desktop',
       'Electron',
       'React',
-      'Video Processing',
+      'Processamento de Vídeo',
     ],
     url: 'https://github.com/pedroaba/taurius-ytd',
     homepage: null,
@@ -44,10 +43,10 @@ const featuredProjects = [
     id: 3,
     name: 'workshop-padrao-de-projeto',
     description:
-      'Educational workshop repository demonstrating various software design patterns with practical examples.',
+      'Repositório de workshop educacional demonstrando vários padrões de design de software com exemplos práticos.',
     language: 'TypeScript',
     topics: [
-      'Design Patterns',
+      'Padrões de Design',
       'Workshop',
       'TypeScript',
       'Next.js',
@@ -62,12 +61,12 @@ const featuredProjects = [
     id: 4,
     name: 'queue-optimization-calculator',
     description:
-      'Tool for calculating and optimizing queueing systems performance metrics with different models.',
+      'Ferramenta para calcular e otimizar métricas de desempenho de sistemas de filas com diferentes modelos.',
     language: 'TypeScript',
     topics: [
-      'Queueing Theory',
-      'Optimization',
-      'Math',
+      'Teoria de Filas',
+      'Otimização',
+      'Matemática',
       'TypeScript',
       'Tailwind CSS',
       'React',
@@ -81,9 +80,9 @@ const featuredProjects = [
     id: 5,
     name: 'Youtube-Video-Downloader-v2',
     description:
-      'CLI tool built in Python to download videos or playlists from YouTube with simultaneous (multi-threaded) downloads, using FFMPEG for processing.',
+      'Ferramenta CLI construída em Python para baixar vídeos ou playlists do YouTube com downloads simultâneos (multi-threaded), usando FFMPEG para processamento.',
     language: 'Python',
-    topics: ['YouTube', 'Downloader', 'Video', 'Thread', 'FFMPEG', 'CLI'],
+    topics: ['YouTube', 'Downloader', 'Vídeo', 'Thread', 'FFMPEG', 'CLI'],
     url: 'https://github.com/pedroaba/Youtube-Video-Downloader-v2',
     homepage: null,
     updatedAt: '2024-01-03',
@@ -139,11 +138,11 @@ export function ProjectsSection() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Featured Projects
+              Projetos em Destaque
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              A selection of projects I&apos;ve built, ranging from web
-              applications to development tools.
+              Uma seleção de projetos que construí, desde aplicações web até
+              ferramentas de desenvolvimento.
             </p>
 
             {/* View All Projects Link */}
@@ -159,7 +158,7 @@ export function ProjectsSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
               >
-                View All on GitHub
+                Ver Todos no GitHub
               </a>
             </Button>
           </div>
@@ -191,7 +190,7 @@ export function ProjectsSection() {
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`View ${project.name} on GitHub`}
+                        aria-label={`Ver ${project.name} no GitHub`}
                       >
                         <ExternalLink className="h-4 w-4" />
                       </a>
@@ -253,7 +252,7 @@ export function ProjectsSection() {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            Live Demo
+                            Demo ao Vivo
                           </a>
                         </Button>
                       </div>
@@ -267,16 +266,16 @@ export function ProjectsSection() {
           {/* Additional Info */}
           <div className="text-center mt-12">
             <p className="text-muted-foreground">
-              Want to see more? Check out my{' '}
+              Quer ver mais? Veja meu{' '}
               <a
                 href="https://github.com/pedroaba"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
-                GitHub profile
+                perfil no GitHub
               </a>{' '}
-              for a complete list of projects.
+              para uma lista completa de projetos.
             </p>
           </div>
         </div>

@@ -26,24 +26,24 @@ export function ContactSection() {
           {/* Section Header */}
           <AnimationDiv className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Let&apos;s Build Something Amazing
+              Vamos Construir Algo Incrível
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to bring your ideas to life? Whether it&apos;s a new
-              project, collaboration opportunity, or just a friendly chat about
-              tech, I&apos;d love to hear from you.
+              Pronto para dar vida às suas ideias? Seja um novo projeto, uma
+              oportunidade de colaboração ou apenas um bate-papo amigável sobre
+              tecnologia, adoraria ouvir de você.
             </p>
           </AnimationDiv>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-4">
             {/* Contact Form */}
             <AnimationDiv variants={fadeInUp}>
               <Card>
                 <CardHeader>
-                  <CardTitle>Start a conversation</CardTitle>
+                  <CardTitle>Comece uma conversa</CardTitle>
                   <CardDescription>
-                    Tell me about your project, idea, or just say hello.
-                    I&apos;ll respond within 24 hours.
+                    Me conte sobre seu projeto, ideia ou apenas diga olá.
+                    Responderei dentro de 24 horas.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -53,14 +53,14 @@ export function ContactSection() {
             </AnimationDiv>
 
             {/* Contact Information */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               <AnimationDiv variants={fadeInUp}>
                 <Card>
                   <CardHeader>
-                    <CardTitle>Connect directly</CardTitle>
+                    <CardTitle>Conecte-se diretamente</CardTitle>
                     <CardDescription>
-                      Prefer to reach out through other channels? Here are my
-                      preferred ways to connect.
+                      Prefere contatar por outros canais? Aqui estão meus canais
+                      preferidos para contato.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -99,9 +99,9 @@ export function ContactSection() {
               <AnimationDiv variants={fadeInUp}>
                 <Card>
                   <CardHeader>
-                    <CardTitle>What to expect</CardTitle>
+                    <CardTitle>O que esperar</CardTitle>
                     <CardDescription>
-                      My typical response times and availability
+                      Meus tempos de resposta e disponibilidade
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -110,35 +110,35 @@ export function ContactSection() {
                         <div>
                           <span className="text-sm font-medium">Email</span>
                           <p className="text-xs text-muted-foreground">
-                            Direct contact
+                            Contato direto
                           </p>
                         </div>
                         <span className="text-sm text-muted-foreground">
-                          Within 24 hours
+                          Dentro de 24 horas
                         </span>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
                         <div>
                           <span className="text-sm font-medium">LinkedIn</span>
                           <p className="text-xs text-muted-foreground">
-                            Professional network
+                            Rede profissional
                           </p>
                         </div>
                         <span className="text-sm text-muted-foreground">
-                          Within 12 hours
+                          Dentro de 12 horas
                         </span>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
                         <div>
                           <span className="text-sm font-medium">
-                            Project inquiries
+                            Inquéritos de projeto
                           </span>
                           <p className="text-xs text-muted-foreground">
-                            New opportunities
+                            Novas oportunidades
                           </p>
                         </div>
                         <span className="text-sm text-muted-foreground">
-                          Same day
+                          Mesmo dia
                         </span>
                       </div>
                     </div>
@@ -149,9 +149,9 @@ export function ContactSection() {
               <AnimationDiv variants={fadeInUp}>
                 <Card>
                   <CardHeader>
-                    <CardTitle>Why work with me?</CardTitle>
+                    <CardTitle>Por que trabalhar comigo?</CardTitle>
                     <CardDescription>
-                      What makes our collaboration successful
+                      O que torna nossa colaboração bem-sucedida
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -160,28 +160,31 @@ export function ContactSection() {
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
                         <div>
                           <p className="text-sm font-medium">
-                            Clear Communication
+                            Comunicação clara
                           </p>
                           <p className="text-xs text-muted-foreground">
-                            Regular updates and transparent project progress
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
-                        <div>
-                          <p className="text-sm font-medium">Quality Focus</p>
-                          <p className="text-xs text-muted-foreground">
-                            Clean, maintainable code with best practices
+                            Atualizações regulares e progresso transparente do
+                            projeto
                           </p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
                         <div>
-                          <p className="text-sm font-medium">Timely Delivery</p>
+                          <p className="text-sm font-medium">
+                            Foco em qualidade
+                          </p>
                           <p className="text-xs text-muted-foreground">
-                            Meeting deadlines while maintaining quality
+                            Código limpo, mantido e com as melhores práticas
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
+                        <div>
+                          <p className="text-sm font-medium">Entrega pontual</p>
+                          <p className="text-xs text-muted-foreground">
+                            Atendendo aos prazos e mantendo a qualidade
                           </p>
                         </div>
                       </div>

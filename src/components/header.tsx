@@ -1,6 +1,8 @@
+import { Code2 } from 'lucide-react'
 import Link from 'next/link'
 
 import { AnimatedThemeToggler } from './magicui/animated-theme-toggler'
+import { Button } from './ui/button'
 
 export function HeaderSection() {
   return (
@@ -8,8 +10,10 @@ export function HeaderSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-primary">
-            PA
+          <Link href="/" className="text-2xl font-bold text-primary ">
+            <Button variant="ghost" size="icon">
+              <Code2 className="size-4" />
+            </Button>
           </Link>
 
           {/* Navigation */}

@@ -1,25 +1,25 @@
 export const site = {
-  name: 'Pedro Augusto — Frontend Engineer',
-  title: 'Pedro Augusto | Frontend Engineer',
+  name: 'Pedro Augusto — Engenheiro Frontend',
+  title: 'Pedro Augusto | Engenheiro Frontend',
   description:
-    'Frontend developer at SIBIS and Software Engineering student at INATEL. I build performant, delightful web apps with React and Next.js.',
-  url: 'https://pedroaba.dev',
+    'Desenvolvedor frontend na SIBIS e estudante de Engenharia de Software no INATEL. Construo aplicações web performáticas e agradáveis com React e Next.js.',
+  url: 'https://pedroaba.com.br',
   ogImage: '/og.png',
 }
 
 export const profile = {
   name: 'Pedro Augusto',
-  role: 'Frontend Engineer @ SIBIS',
-  location: 'Brazil',
+  role: 'Engenheiro Frontend @ SIBIS',
+  location: 'Brasil',
   linkedin: 'https://www.linkedin.com/in/pedroaba/',
   github: 'https://github.com/pedroaba',
   email: 'pedr.augustobarbosa.aparecido@gmail.com',
   shortBio: [
-    'Software Engineering student at INATEL.',
-    'Frontend Developer at SIBIS.',
-    'JS/TS/Python daily; exploring Rust for desktop.',
+    'Estudante de Engenharia de Software no INATEL.',
+    'Desenvolvedor Frontend na SIBIS.',
+    'JS/TS/Python diariamente; explorando Rust para desktop.',
   ],
-  about: `Currently studying Software Engineering at INATEL and working as a Mid-level Frontend Developer at SIBIS. Experienced with HTML, CSS, JavaScript, Python, and TypeScript (daily drivers). Intermediate knowledge in C/C++, C#, and Java. Starting with Rust for high-performance desktop apps. Familiar and productive with ReactJS, NextJS, Flask, ElectronJS, PySide6/PyQt6, React Native, ExpoJS, NativeBase, PrismaJS, Tailwind CSS, and Pandas. Learning and improving on Django, Spring Boot, Tauri, Windows Forms, and WinUI3.`,
+  about: `Atualmente estudando Engenharia de Software no INATEL e trabalhando como Desenvolvedor Frontend Pleno na SIBIS. Experiente com HTML, CSS, JavaScript, Python e TypeScript (uso diário). Conhecimento intermediário em C/C++, C# e Java. Iniciando com Rust para aplicações desktop de alta performance. Familiarizado e produtivo com ReactJS, NextJS, Flask, ElectronJS, PySide6/PyQt6, React Native, ExpoJS, NativeBase, PrismaJS, Tailwind CSS e Pandas. Aprendendo e melhorando em Django, Spring Boot, Tauri, Windows Forms e WinUI3.`,
 }
 
 export const curatedRepos = [
@@ -37,71 +37,71 @@ export const curatedRepos = [
 
 export const professionalExperience = [
   {
-    title: 'Mid-level Frontend Developer',
+    title: 'Desenvolvedor Frontend Pleno',
     company: 'SIBIS',
-    period: 'Sep 2024 - Present',
+    period: 'Set 2024 - Presente',
     description:
-      'Building modern web applications with React, Next.js, and TypeScript.',
+      'Construindo aplicações web modernas com React, Next.js e TypeScript.',
     highlights: [
-      'Developed responsive web applications using React and Next.js',
-      'Collaborated with design and backend teams to deliver seamless user experiences',
-      'Optimized application performance and implemented best practices',
+      'Desenvolvi aplicações web responsivas usando React e Next.js',
+      'Colaborei com equipes de design e backend para entregar experiências de usuário fluidas',
+      'Otimizei performance de aplicações e implementei melhores práticas',
     ],
   },
   {
-    title: 'Systems Technician I',
+    title: 'Técnico de Sistemas I',
     company: 'INATEL',
-    period: '2023 - Sep 2024',
+    period: '2023 - Set 2024',
     description:
-      'Continued my work as a full stack developer, building web and desktop applications for telecommunications tools and internal management systems. In addition to developing desktop apps with Python and PySide6/PyQt6 and web apps with JavaScript and Vue.js, I also acted as tech lead for a development squad for 6 months, coordinating and guiding the team in project delivery and best practices.',
+      'Continuei meu trabalho como desenvolvedor full stack, construindo aplicações web e desktop para ferramentas de telecomunicações e sistemas de gestão interna. Além de desenvolver aplicações desktop com Python e PySide6/PyQt6 e aplicações web com JavaScript e Vue.js, também atuei como tech lead de um squad de desenvolvimento por 6 meses, coordenando e orientando a equipe na entrega de projetos e melhores práticas.',
     highlights: [
-      'Developed and maintained web applications with JavaScript and Vue.js',
-      'Built desktop tools for telecom data analysis and reporting using Python',
-      'Created management systems for employees, resources, and activities',
-      'Worked closely with telecom engineers to deliver custom solutions',
-      'Gained experience in full stack development and telecom-focused software',
-      'Acted as tech lead for a development squad for 6 months, coordinating team efforts and ensuring project success',
+      'Desenvolvi e mantive aplicações web com JavaScript e Vue.js',
+      'Construí ferramentas desktop para análise e relatórios de dados de telecom usando Python',
+      'Criei sistemas de gestão para funcionários, recursos e atividades',
+      'Trabalhei próximo a engenheiros de telecom para entregar soluções customizadas',
+      'Ganhei experiência em desenvolvimento full stack e software focado em telecom',
+      'Atuei como tech lead de um squad de desenvolvimento por 6 meses, coordenando esforços da equipe e garantindo sucesso dos projetos',
     ],
   },
   {
-    title: 'Software Development Intern',
+    title: 'Estagiário de Desenvolvimento de Software',
     company: 'INATEL',
     period: '2021 - 2023',
     description:
-      'Worked as a full stack developer, building web and desktop applications for telecommunications tools and internal management systems. Developed desktop apps using Python and PySide6/PyQt6, and web apps using JavaScript and Vue.js. Projects ranged from employee/resource/activity management systems to desktop tools for generating reports from antenna and cell outputs.',
+      'Trabalhei como desenvolvedor full stack, construindo aplicações web e desktop para ferramentas de telecomunicações e sistemas de gestão interna. Desenvolvi aplicações desktop usando Python e PySide6/PyQt6, e aplicações web usando JavaScript e Vue.js. Os projetos variaram desde sistemas de gestão de funcionários/recursos/atividades até ferramentas desktop para gerar relatórios de saídas de antenas e células.',
     highlights: [
-      'Developed and maintained web applications with JavaScript and Vue.js',
-      'Built desktop tools for telecom data analysis and reporting using Python',
-      'Created management systems for employees, resources, and activities',
-      'Worked closely with telecom engineers to deliver custom solutions',
-      'Gained experience in full stack development and telecom-focused software',
+      'Desenvolvi e mantive aplicações web com JavaScript e Vue.js',
+      'Construí ferramentas desktop para análise e relatórios de dados de telecom usando Python',
+      'Criei sistemas de gestão para funcionários, recursos e atividades',
+      'Trabalhei próximo a engenheiros de telecom para entregar soluções customizadas',
+      'Ganhei experiência em desenvolvimento full stack e software focado em telecom',
     ],
   },
 ]
 
 export const academicExperience = [
   {
-    title: 'Software Engineering Student',
+    title: 'Estudante de Engenharia de Software',
     company: 'INATEL',
-    period: '2021 - Present',
+    period: '2021 - Presente',
     description:
-      'Studying Software Engineering with focus on web technologies and system design.',
+      'Estudando Engenharia de Software com foco em tecnologias web e design de sistemas.',
     highlights: [
-      'Learning advanced software engineering principles',
-      'Working on projects involving full-stack development',
-      'Exploring emerging technologies and best practices',
+      'Aprendendo princípios avançados de engenharia de software',
+      'Trabalhando em projetos envolvendo desenvolvimento full-stack',
+      'Explorando tecnologias emergentes e melhores práticas',
     ],
   },
   {
-    title: 'Electronics Technician (Automation Emphasis)',
+    title: 'Técnico em Eletrônica (Ênfase em Automação)',
     company: 'ETE FMC',
     period: '2018 - 2020',
     description:
-      'Graduated as an Electronics Technician with an emphasis in automation at ETE FMC, completing the technical course alongside my high school studies.',
+      'Formado como Técnico em Eletrônica com ênfase em automação na ETE FMC, completando o curso técnico junto com os estudos do ensino médio.',
     highlights: [
-      'Completed technical training in electronics and automation systems concurrently with high school',
-      'Worked on hands-on projects involving industrial automation and control',
-      'Gained foundational knowledge in electronics, instrumentation, and process automation',
+      'Completei treinamento técnico em eletrônica e sistemas de automação concomitantemente com o ensino médio',
+      'Trabalhei em projetos práticos envolvendo automação industrial e controle',
+      'Ganhei conhecimento fundamental em eletrônica, instrumentação e automação de processos',
     ],
   },
 ]

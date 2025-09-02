@@ -95,7 +95,7 @@ export default async function Image() {
             color: 'rgba(255, 255, 255, 0.7)',
           }}
         >
-          pedroaba.dev
+          pedroaba.com.br
         </div>
       </div>
     ),

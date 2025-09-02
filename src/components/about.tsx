@@ -14,23 +14,23 @@ import { NumberTicker } from './magicui/number-ticker'
 
 const driverMeForward = [
   {
-    title: 'Building for scale',
+    title: 'Construindo para escala',
     description:
-      'Creating maintainable, scalable applications that grow with your business',
+      'Criando aplicações sustentáveis e escaláveis que crescem com seu negócio',
   },
   {
-    title: 'Innovation through learning',
-    description: 'Exploring cutting-edge technologies and development patterns',
+    title: 'Inovação através do aprendizado',
+    description: 'Explorando tecnologias de ponta e padrões de desenvolvimento',
   },
   {
-    title: 'Open source contribution',
+    title: 'Contribuição open source',
     description:
-      'Sharing knowledge and contributing to the developer community',
+      'Compartilhando conhecimento e contribuindo para a comunidade de desenvolvedores',
   },
   {
-    title: 'User-first approach',
+    title: 'Abordagem centrada no usuário',
     description:
-      'Bridging the gap between design and development for exceptional UX',
+      'Conectando design e desenvolvimento para uma experiência excepcional',
   },
 ]
 
@@ -41,10 +41,10 @@ export function AboutSection() {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Sobre Mim</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Transforming ideas into exceptional digital experiences through
-              clean code, innovative solutions, and user-centric design.
+              Transformando ideias em experiências digitais excepcionais através
+              de código limpo, soluções inovadoras e design centrado no usuário.
             </p>
           </div>
 
@@ -55,26 +55,27 @@ export function AboutSection() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <MapPin className="size-4 text-primary" />
-                    My Story
+                    Minha História
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="prose prose-neutral dark:prose-invert max-w-none">
                     <p className="text-muted-foreground leading-relaxed">
-                      I&apos;m a passionate Frontend Engineer with over 4 years
-                      of experience crafting digital solutions that users love.
-                      Currently working at SIBIS as a Mid-level Frontend
-                      Developer while pursuing my Software Engineering degree at
+                      Sou um Engenheiro Frontend apaixonado com mais de 4 anos
+                      de experiência criando soluções digitais que os usuários
+                      adoram. Atualmente trabalho na SIBIS como Desenvolvedor
+                      Frontend Pleno enquanto curso Engenharia de Software no
                       INATEL.
                     </p>
 
                     <p className="text-muted-foreground leading-relaxed mt-4">
-                      My journey in tech started with a curiosity for building
-                      things that matter. Today, I specialize in React, Next.js,
-                      and TypeScript, creating performant and accessible web
-                      applications. I&apos;m constantly exploring new
-                      technologies, currently diving deep into Rust for
-                      high-performance desktop applications.
+                      Minha jornada na tecnologia começou com a curiosidade de
+                      construir coisas que importam. Hoje, me especializo em
+                      React, Next.js e TypeScript, criando aplicações web
+                      performáticas e acessíveis. Estou constantemente
+                      explorando novas tecnologias, atualmente mergulhando
+                      profundamente em Rust para aplicações desktop de alta
+                      performance.
                     </p>
                   </div>
 
@@ -82,7 +83,7 @@ export function AboutSection() {
 
                   <div>
                     <h4 className="font-semibold mb-4 text-lg">
-                      What drives me forward
+                      O que me move para frente
                     </h4>
                     <ul className="space-y-3 text-muted-foreground">
                       {driverMeForward.map((item) => (
@@ -103,16 +104,16 @@ export function AboutSection() {
 
                   <div>
                     <h4 className="font-semibold mb-4 text-lg">
-                      My approach to development
+                      Minha abordagem ao desenvolvimento
                     </h4>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <h5 className="font-medium text-foreground">
-                          🎯 Problem Solving
+                          🎯 Resolução de Problemas
                         </h5>
                         <p className="text-sm text-muted-foreground">
-                          Understanding requirements deeply before writing a
-                          single line of code
+                          Compreendendo profundamente os requisitos antes de
+                          escrever uma única linha de código
                         </p>
                       </div>
                       <div className="space-y-2">
@@ -120,8 +121,8 @@ export function AboutSection() {
                           ⚡ Performance
                         </h5>
                         <p className="text-sm text-muted-foreground">
-                          Optimizing for speed, accessibility, and user
-                          experience
+                          Otimizando velocidade, acessibilidade e experiência do
+                          usuário
                         </p>
                       </div>
                       <div className="space-y-2">
@@ -129,17 +130,17 @@ export function AboutSection() {
                           🔧 Clean Code
                         </h5>
                         <p className="text-sm text-muted-foreground">
-                          Writing maintainable, readable, and well-documented
-                          code
+                          Escrevendo código sustentável, legível e bem
+                          documentado
                         </p>
                       </div>
                       <div className="space-y-2">
                         <h5 className="font-medium text-foreground">
-                          🚀 Continuous Growth
+                          🚀 Crescimento Contínuo
                         </h5>
                         <p className="text-sm text-muted-foreground">
-                          Staying updated with latest technologies and best
-                          practices
+                          Mantendo-me atualizado com as mais recentes
+                          tecnologias e melhores práticas
                         </p>
                       </div>
                     </div>
@@ -155,7 +156,7 @@ export function AboutSection() {
                 <CardHeader className="">
                   <CardTitle className="flex items-center gap-2 text-lg">
                     <Briefcase className="size-4 text-primary" />
-                    Current Role
+                    Cargo Atual
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -163,14 +164,14 @@ export function AboutSection() {
                     <div>
                       <p className="font-medium text-lg">{profile.role}</p>
                       <p className="text-sm text-muted-foreground">
-                        SIBIS • Full-time
+                        SIBIS • Tempo integral
                       </p>
                     </div>
                     <Badge variant="secondary" className="w-fit">
-                      Mid-level Frontend Developer
+                      Desenvolvedor Frontend Pleno
                     </Badge>
                     <p className="text-xs text-muted-foreground">
-                      Building modern web applications with React, Next.js, and
+                      Criando aplicativos web modernos com React, Next.js, e
                       TypeScript
                     </p>
                   </div>
@@ -182,25 +183,25 @@ export function AboutSection() {
                 <CardHeader className="">
                   <CardTitle className="flex items-center gap-2 text-lg">
                     <GraduationCap className="size-4 text-primary" />
-                    Education
+                    Educação
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
                     <div>
                       <p className="font-medium text-lg">
-                        Software Engineering
+                        Engenharia de Software
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        INATEL • 2021 - Present
+                        INATEL • 2021 - Presente
                       </p>
                     </div>
                     <Badge variant="outline" className="w-fit">
-                      Currently Studying
+                      Estudando
                     </Badge>
                     <p className="text-xs text-muted-foreground">
-                      Focus on web technologies, system design, and software
-                      architecture
+                      Focado em tecnologias web, design de sistemas e
+                      arquitetura de software
                     </p>
                   </div>
                 </CardContent>
@@ -209,62 +210,62 @@ export function AboutSection() {
               {/* Tech Focus */}
               <Card className="gap-2">
                 <CardHeader className="">
-                  <CardTitle className="text-lg">Tech Focus</CardTitle>
+                  <CardTitle className="text-lg">Foco Tecnológico</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div>
                       <h5 className="font-medium text-sm text-foreground mb-2">
-                        Primary Stack
+                        Stack Principal
                       </h5>
                       <div className="flex flex-wrap gap-1">
                         <TechFocusBadge
                           name="React"
                           category="primary"
-                          description="Popular JavaScript library for building user interfaces with component-based architecture and virtual DOM."
-                          experience="4+ years"
+                          description="Biblioteca JavaScript popular para construir interfaces de usuário com arquitetura baseada em componentes e DOM virtual."
+                          experience="4+ anos"
                           docs="https://react.dev/"
                         />
                         <TechFocusBadge
                           name="Next.js"
                           category="primary"
-                          description="React framework with server-side rendering, static generation, and full-stack capabilities for production apps."
-                          experience="3+ years"
+                          description="Framework React com renderização no servidor, geração estática e capacidades full-stack para aplicações de produção."
+                          experience="3+ anos"
                           docs="https://nextjs.org/docs"
                         />
                         <TechFocusBadge
                           name="TypeScript"
                           category="primary"
-                          description="JavaScript with static type definitions. Enhances code reliability and developer experience in large applications."
-                          experience="3+ years"
+                          description="JavaScript com definições de tipos estáticos. Melhora a confiabilidade do código e experiência do desenvolvedor em aplicações grandes."
+                          experience="3+ anos"
                           docs="https://www.typescriptlang.org/docs/"
                         />
                       </div>
                     </div>
                     <div>
                       <h5 className="font-medium text-sm text-foreground mb-2">
-                        Exploring
+                        Explorando
                       </h5>
                       <div className="flex flex-wrap gap-1">
                         <TechFocusBadge
                           name="Rust"
                           category="exploring"
-                          description="Systems programming language focused on safety, speed, and concurrency without garbage collection."
-                          experience="6 months"
+                          description="Linguagem de programação de sistemas focada em segurança, velocidade e concorrência sem coleta de lixo."
+                          experience="6 meses"
                           docs="https://doc.rust-lang.org/"
                         />
                         <TechFocusBadge
                           name="Tauri"
                           category="exploring"
-                          description="Framework for building lightweight, secure desktop applications with web frontend and Rust backend."
-                          experience="3 months"
+                          description="Framework para construir aplicações desktop leves e seguras com frontend web e backend Rust."
+                          experience="3 meses"
                           docs="https://tauri.app/v1/guides/"
                         />
                         <TechFocusBadge
                           name="WinUI3"
                           category="exploring"
-                          description="Modern native UI platform for Windows apps with Fluent Design System and XAML-based development."
-                          experience="3 months"
+                          description="Plataforma de UI nativa moderna para aplicações Windows com Fluent Design System e desenvolvimento baseado em XAML."
+                          experience="3 meses"
                           docs="https://docs.microsoft.com/en-us/windows/apps/winui/"
                         />
                       </div>
@@ -276,7 +277,7 @@ export function AboutSection() {
               {/* Quick Stats */}
               <Card className="gap-2">
                 <CardHeader className="">
-                  <CardTitle className="text-lg">Quick Facts</CardTitle>
+                  <CardTitle className="text-lg">Fatos Rápidos</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 gap-4 text-center">
@@ -285,7 +286,7 @@ export function AboutSection() {
                         <NumberTicker value={4} delay={2} />+
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        Years Experience
+                        Anos de Experiência
                       </p>
                     </div>
                     <div>
@@ -293,18 +294,20 @@ export function AboutSection() {
                         <NumberTicker value={28} delay={2} />+
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        Technologies
+                        Tecnologias
                       </p>
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-primary">
                         <NumberTicker value={15} delay={2} />+
                       </p>
-                      <p className="text-xs text-muted-foreground">Projects</p>
+                      <p className="text-xs text-muted-foreground">Projetos</p>
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-primary">∞</p>
-                      <p className="text-xs text-muted-foreground">Learning</p>
+                      <p className="text-xs text-muted-foreground">
+                        Aprendizagem
+                      </p>
                     </div>
                   </div>
                 </CardContent>

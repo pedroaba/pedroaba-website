@@ -21,20 +21,20 @@ import { Textarea } from './ui/textarea'
 const schema = z.object({
   name: z
     .string({
-      message: 'Name is required',
+      message: 'Nome é obrigatório',
     })
-    .min(1, { message: 'Name is required' }),
-  email: z.email({ message: 'Invalid email address' }),
+    .min(1, { message: 'Nome é obrigatório' }),
+  email: z.email({ message: 'Endereço de email inválido' }),
   subject: z
     .string({
-      message: 'Subject is required',
+      message: 'Assunto é obrigatório',
     })
-    .min(1, { message: 'Subject is required' }),
+    .min(1, { message: 'Assunto é obrigatório' }),
   message: z
     .string({
-      message: 'Message is required',
+      message: 'Mensagem é obrigatória',
     })
-    .min(1, { message: 'Message is required' }),
+    .min(1, { message: 'Mensagem é obrigatória' }),
 })
 
 type Schema = z.infer<typeof schema>
@@ -59,7 +59,7 @@ export function ContactSectionForm() {
       `mailto:pedr.augustobarbosa.aparecido@gmail.com?subject=${encodedSubject}&body=${encodedMessage}`,
     )
 
-    toast.success('Message sent successfully')
+    toast.success('Mensagem enviada com sucesso')
   }
 
   return (
@@ -74,9 +74,9 @@ export function ContactSectionForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>Nome</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Your name" />
+                  <Input {...field} placeholder="Seu nome" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -90,7 +90,7 @@ export function ContactSectionForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Your email" />
+                  <Input {...field} placeholder="Seu email" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -103,11 +103,11 @@ export function ContactSectionForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject</FormLabel>
+              <FormLabel>Assunto</FormLabel>
               <FormControl>
                 <Input
                   {...field}
-                  placeholder="Project collaboration, job opportunity, or just hello?"
+                  placeholder="Colaboração de projeto, oportunidade de emprego ou apenas um olá?"
                 />
               </FormControl>
               <FormMessage />
@@ -120,12 +120,12 @@ export function ContactSectionForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>Mensagem</FormLabel>
               <FormControl>
                 <Textarea
                   {...field}
                   className="min-h-[100px]"
-                  placeholder="Share your project details, timeline, budget, or just tell me what's on your mind..."
+                  placeholder="Compartilhe os detalhes do seu projeto, cronograma, orçamento ou apenas me diga o que está na sua mente..."
                 />
               </FormControl>
               <FormMessage />
@@ -134,7 +134,7 @@ export function ContactSectionForm() {
         />
 
         <Button className="w-full" icon={Send} iconPosition="right">
-          Send Message
+          Enviar mensagem
         </Button>
       </form>
     </Form>
