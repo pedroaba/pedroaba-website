@@ -73,7 +73,7 @@ export const skillGroups = {
       },
       {
         name: 'Django',
-        level: 'learning',
+        level: 'intermediate',
         description:
           'High-level Python web framework with built-in admin interface, ORM, and batteries-included philosophy.',
         experience: '2 years',

@@ -1,18 +1,11 @@
 import { AnimationDiv } from '@pedroaba/components/motion/div'
-import { ScrollToButton } from '@pedroaba/components/scroll-to-button'
 import { Badge } from '@pedroaba/components/ui/badge'
 import { Button } from '@pedroaba/components/ui/button'
 import { profile } from '@pedroaba/config/portfolio.config'
+import { socialLinks } from '@pedroaba/config/social'
 import { fadeInUp, staggerChildren } from '@pedroaba/lib/animations'
 import { cn } from '@pedroaba/lib/utils'
-import {
-  ArrowRight,
-  Building,
-  Download,
-  GraduationCap,
-  MapPin,
-  Sparkles,
-} from 'lucide-react'
+import { Building, GraduationCap, MapPin, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 
 import { AnimatedGridPattern } from './magicui/animated-grid-pattern'
@@ -123,38 +116,44 @@ export function HeroSection() {
             </p>
           </AnimationDiv>
 
-          {/* Enhanced CTA Buttons with better styling */}
+          {/* Social Media Links - Replacing the CTA buttons */}
           <AnimationDiv variants={fadeInUp}>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-14">
-              <ScrollToButton
-                targetId="projects"
-                className={cn(
-                  'text-lg px-8 py-4 bg-gradient-to-r from-primary to-primary/80',
-                  'hover:from-primary/90 hover:to-primary/70',
-                  'transform hover:scale-105 transition-all duration-300',
-                  'shadow-lg hover:shadow-xl',
-                )}
-              >
-                Explore My Work
-                <ArrowRight className="size-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </ScrollToButton>
-
-              <Button
-                variant="outline"
-                className={cn(
-                  'text-lg px-8 py-4 border-2',
-                  'hover:bg-primary hover:text-primary-foreground',
-                  'transform hover:scale-105 transition-all duration-300',
-                  'shadow-lg hover:shadow-xl',
-                )}
-                asChild
-                icon={Download}
-                iconPosition="right"
-              >
-                <Link href="/pedro-augusto-cv.pdf" target="_blank">
-                  Download Resume
-                </Link>
-              </Button>
+            <div className="mb-14">
+              <p className="text-lg text-muted-foreground mb-6">
+                Let&apos;s connect and build something amazing together
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-4">
+                {socialLinks.map((social) => (
+                  <Button
+                    key={social.name}
+                    variant="outline"
+                    size="lg"
+                    className={cn(
+                      'group relative overflow-hidden px-6 py-3',
+                      'border-2 border-primary/20 hover:border-primary/40',
+                      'bg-background/50 backdrop-blur-sm',
+                      'hover:bg-primary/10 hover:text-primary',
+                      'transform hover:scale-105 transition-all duration-300',
+                      'shadow-lg hover:shadow-xl',
+                      social.color,
+                    )}
+                    asChild
+                  >
+                    <Link
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="flex items-center gap-3">
+                        <social.icon className="size-5 group-hover:scale-110 transition-transform duration-300" />
+                        <span className="font-medium">{social.name}</span>
+                      </div>
+                      {/* Hover effect overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </Link>
+                  </Button>
+                ))}
+              </div>
             </div>
           </AnimationDiv>
 

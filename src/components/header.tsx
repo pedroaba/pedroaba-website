@@ -13,36 +13,42 @@ export function HeaderSection() {
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             <Link
               href="#about"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              About
+              Sobre
             </Link>
             <Link
               href="#skills"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Skills
+              Habilidades
+            </Link>
+            <Link
+              href="#client-projects"
+              className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Projetos Clientes
             </Link>
             <Link
               href="#projects"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Projects
+              Projetos Pessoais
             </Link>
             <Link
-              href="#experience"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              href="#professional-experience"
+              className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Experience
+              Experiência
             </Link>
             <Link
               href="#contact"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              Contact
+              Contato
             </Link>
           </nav>
 

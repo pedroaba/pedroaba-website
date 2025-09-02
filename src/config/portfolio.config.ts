@@ -35,7 +35,7 @@ export const curatedRepos = [
   },
 ]
 
-export const experience = [
+export const professionalExperience = [
   {
     title: 'Mid-level Frontend Developer',
     company: 'SIBIS',
@@ -77,6 +77,9 @@ export const experience = [
       'Gained experience in full stack development and telecom-focused software',
     ],
   },
+]
+
+export const academicExperience = [
   {
     title: 'Software Engineering Student',
     company: 'INATEL',

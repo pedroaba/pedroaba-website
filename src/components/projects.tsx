@@ -133,7 +133,7 @@ function formatDate(dateString: string): string {
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 md:py-32">
+    <section id="projects" className="py-20 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}

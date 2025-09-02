@@ -8,6 +8,7 @@ import {
 } from '@pedroaba/components/ui/card'
 import { socialLinks } from '@pedroaba/config/social'
 import { fadeInUp, staggerChildren } from '@pedroaba/lib/animations'
+import { cn } from '@pedroaba/lib/utils'
 
 import { ContactSectionForm } from './contact-section-form'
 
@@ -70,7 +71,10 @@ export function ContactSection() {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`flex items-center gap-3 p-3 rounded-lg border transition-colors hover:bg-muted ${link.color}`}
+                          className={cn(
+                            'flex items-center gap-3 p-3 rounded-lg border transition-colors hover:bg-muted',
+                            link.color,
+                          )}
                         >
                           <link.icon className="h-5 w-5" />
                           <div>
