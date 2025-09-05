@@ -1,5 +1,3 @@
-import '@pedroaba/app/globals.css'
-
 export default function LandingPageLayout({
   children,
 }: {

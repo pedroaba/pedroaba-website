@@ -1,7 +1,6 @@
 'use client'
 
 import { ScrollArea } from '@pedroaba/components/ui/scroll-area'
-import { useSidebar } from '@pedroaba/components/ui/sidebar'
 import { cn } from '@pedroaba/lib/utils'
 
 type MainContainerProps = {
@@ -10,14 +9,11 @@ type MainContainerProps = {
 }
 
 export function MainContainer({ children, className }: MainContainerProps) {
-  const { state } = useSidebar()
-
   return (
     <ScrollArea
       className={cn(
-        'h-fit w-full p-4 pt-2 @container',
-        state === 'collapsed' && 'max-h-[calc(100vh-49px)]',
-        state === 'expanded' && 'max-h-[calc(100vh-65px)]',
+        'flex-1 w-full p-4 sm:p-6 @container',
+        'max-h-[calc(100vh-120px)]', // Ajustado para o novo header
         className,
       )}
     >

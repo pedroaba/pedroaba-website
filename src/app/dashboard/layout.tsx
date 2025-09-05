@@ -1,7 +1,6 @@
-import '@pedroaba/app/internal-global.css'
-
-import { AppSidebar } from '@pedroaba/components/app-sidebar'
-import { SidebarInset, SidebarProvider } from '@pedroaba/components/ui/sidebar'
+import { auth, signOut } from '@pedroaba/lib/authjs'
+import { prisma } from '@pedroaba/lib/prisma'
+import { redirect } from 'next/navigation'
 import type { ReactNode } from 'react'
 
 import { AuthWrapper } from './components/auth-wrapper'
@@ -15,17 +14,43 @@ type DashboardLayoutProps = {
 export default async function DashboardLayout({
   children,
 }: DashboardLayoutProps) {
+  const session = await auth()
+  const userEmail = session?.user?.email
+  if (!userEmail) {
+    await signOut()
+
+    return redirect('/auth/sign-in')
+  }
+
+  const user = await prisma.user.findUnique({
+    where: {
+      email: userEmail,
+    },
+  })
+
+  if (!user) {
+    await signOut()
+
+    return redirect('/auth/sign-in')
+  }
+
+  let organizationName = 'CLIENTE INDIVIDUAL'
+  if (user.organizationId) {
+    const organization = await prisma.organization.findUnique({
+      where: {
+        id: user.organizationId,
+      },
+    })
+
+    organizationName = organization?.name || 'CLIENTE INDIVIDUAL'
+  }
+
   return (
     <AuthWrapper>
-      <SidebarProvider>
-        <AppSidebar />
-        <SidebarInset>
-          <div className="flex flex-col flex-1 @container">
-            <Header />
-            <MainContainer>{children}</MainContainer>
-          </div>
-        </SidebarInset>
-      </SidebarProvider>
+      <div className="flex flex-col min-h-screen">
+        <Header user={{ name: user.name || '', organizationName }} />
+        <MainContainer>{children}</MainContainer>
+      </div>
     </AuthWrapper>
   )
 }

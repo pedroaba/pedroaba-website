@@ -28,8 +28,6 @@ export default async function ClientsPage({ searchParams }: ClientsPageProps) {
   const pageNumber = page ? Number(page) : SystemConfig.DEFAULT_PAGE
   const pageLimit = limit ? Number(limit) : SystemConfig.DEFAULT_PAGE_LIMIT
 
-  console.log(search, state, status, page, limit)
-
   let projects: Project[] = []
   let totalPages = 0
   let totalProjects = 0
