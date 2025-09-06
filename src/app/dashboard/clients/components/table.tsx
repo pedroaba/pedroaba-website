@@ -32,6 +32,7 @@ import {
   TableHeader,
   TableRow,
 } from '@pedroaba/components/ui/table'
+import { EntityStatusColors } from '@pedroaba/constants/entity-status'
 import { cn } from '@pedroaba/lib/utils'
 import { invalidateCacheOnPages } from '@pedroaba/utils/invalidate-cache-on-pages'
 import { type Client, ClientStatus } from '@prisma/client'
@@ -169,10 +170,14 @@ export function ClientTable({
                   <Badge
                     className={cn(
                       'capitalize',
-                      client.status === 'ACTIVE' && 'bg-green-500',
-                      client.status === 'INACTIVE' && 'bg-yellow-500',
-                      client.status === 'POTENTIAL' && 'bg-blue-500',
-                      client.status === 'ARCHIVED' && 'bg-gray-500',
+                      client.status === 'ACTIVE' &&
+                        'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
+                      client.status === 'INACTIVE' &&
+                        'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
+                      client.status === 'POTENTIAL' &&
+                        'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+                      client.status === 'ARCHIVED' &&
+                        'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200',
                     )}
                   >
                     {client.status}
@@ -185,8 +190,7 @@ export function ClientTable({
                   <Badge
                     className={cn(
                       'capitalize',
-                      client.state === 'ACTIVE' && 'bg-green-500',
-                      client.state === 'DELETED' && 'bg-red-500',
+                      EntityStatusColors[client.state],
                     )}
                   >
                     {client.state}

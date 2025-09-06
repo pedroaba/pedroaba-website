@@ -32,10 +32,11 @@ import {
   TableHeader,
   TableRow,
 } from '@pedroaba/components/ui/table'
+import { EntityStatusColors } from '@pedroaba/constants/entity-status'
 import { cn } from '@pedroaba/lib/utils'
 import { formatCentsToReal } from '@pedroaba/utils/format-cents-to-real'
 import { invalidateCacheOnPages } from '@pedroaba/utils/invalidate-cache-on-pages'
-import { EntityState, type Project, ProjectStatus } from '@prisma/client'
+import { type Project, ProjectStatus } from '@prisma/client'
 import {
   Check,
   ChevronLeftIcon,
@@ -186,19 +187,22 @@ export function ProjectTable({
                   <Badge
                     className={cn(
                       'capitalize',
-                      project.status === ProjectStatus.BACKLOG && 'bg-gray-400',
+                      project.status === ProjectStatus.BACKLOG &&
+                        'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200',
                       project.status === ProjectStatus.PLANNING &&
-                        'bg-blue-400',
-                      project.status === ProjectStatus.TODO && 'bg-yellow-400',
+                        'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+                      project.status === ProjectStatus.TODO &&
+                        'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
                       project.status === ProjectStatus.IN_PROGRESS &&
-                        'bg-orange-500',
+                        'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
                       project.status === ProjectStatus.REVIEW &&
-                        'bg-purple-500',
+                        'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
                       project.status === ProjectStatus.COMPLETED &&
-                        'bg-green-600',
-                      project.status === ProjectStatus.ON_HOLD && 'bg-pink-500',
+                        'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
+                      project.status === ProjectStatus.ON_HOLD &&
+                        'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200',
                       project.status === ProjectStatus.CANCELLED &&
-                        'bg-red-500',
+                        'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
                     )}
                   >
                     {project.status}
@@ -215,8 +219,7 @@ export function ProjectTable({
                   <Badge
                     className={cn(
                       'capitalize',
-                      project.state === EntityState.ACTIVE && 'bg-green-500',
-                      project.state === EntityState.DELETED && 'bg-red-500',
+                      EntityStatusColors[project.state],
                     )}
                   >
                     {project.state}
