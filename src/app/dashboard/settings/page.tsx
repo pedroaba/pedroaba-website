@@ -8,7 +8,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@pedroaba/components/ui/dialog'
-import { Separator } from '@pedroaba/components/ui/separator'
 import {
   Tabs,
   TabsContent,
@@ -18,6 +17,7 @@ import {
 import { auth } from '@pedroaba/lib/authjs'
 import { dayjsApi } from '@pedroaba/lib/dayjs'
 import { prisma } from '@pedroaba/lib/prisma'
+import { EntityState } from '@prisma/client'
 import {
   Bell,
   CreditCard,
@@ -30,6 +30,7 @@ import {
 } from 'lucide-react'
 
 import { ChangePasswordForm } from './change-password-form'
+import { UserHoverCard } from './components/user-hover-card'
 import { TeamNameForm } from './team-name-form'
 
 export default async function SettingsPage() {
@@ -45,7 +46,17 @@ export default async function SettingsPage() {
       email: userEmail,
     },
     include: {
-      organization: true,
+      organization: {
+        select: {
+          name: true,
+          id: true,
+          users: {
+            omit: {
+              password: true,
+            },
+          },
+        },
+      },
     },
   })
 
@@ -152,61 +163,30 @@ export default async function SettingsPage() {
           </TabsTrigger>
         </TabsList>
 
-        <div className="flex-1 rounded-md border text-start">
-          <TabsContent value="general">
-            <div className="space-y-0">
-              {/* Team Name Section */}
-              <div className="p-6 space-y-4">
-                <div>
-                  <h3 className="text-lg font-semibold">Team Name</h3>
-                  <p className="text-sm text-muted-foreground">
-                    This is your team&apos;s visible name within the
-                    application. For example, the name of your company or
-                    department.
-                  </p>
-                </div>
-                <div className="max-w-md">
-                  <TeamNameForm
-                    defaultValue={user.organization?.name}
-                    organizationId={user.organization?.id}
-                  />
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Please use 32 characters at maximum.
-                  </p>
-                </div>
-                <div className="flex justify-end">
-                  <Button
-                    size="sm"
-                    type="submit"
-                    form="settings-team-name-form"
-                  >
-                    Save
-                  </Button>
-                </div>
+        <div className="flex-1 rounded-md border text-start h-fit flex flex-col">
+          <TabsContent value="general" className="h-full">
+            {/* Team Name Section */}
+            <div className="p-6 h-full flex flex-col">
+              <div className="">
+                <h3 className="text-lg font-semibold">Team Name</h3>
+                <p className="text-sm text-muted-foreground">
+                  This is your team&apos;s visible name within the application.
+                  For example, the name of your company or department.
+                </p>
               </div>
-
-              <Separator />
-
-              {/* Team Avatar Section */}
-              <div className="p-6 space-y-4">
-                <div>
-                  <h3 className="text-lg font-semibold">Team Avatar</h3>
-                  <p className="text-sm text-muted-foreground">
-                    This is your team&apos;s avatar. Click on the avatar to
-                    upload a custom one from your files.
-                  </p>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="size-16 rounded-full bg-gradient-to-br from-red-500 to-green-500 flex items-center justify-center">
-                    <span className="text-white font-semibold text-lg">
-                      {user.name?.charAt(0) ||
-                        user.email.charAt(0).toUpperCase()}
-                    </span>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    Upload Avatar
-                  </Button>
-                </div>
+              <div className="max-w-md my-4">
+                <TeamNameForm
+                  defaultValue={user.organization?.name}
+                  organizationId={user.organization?.id}
+                />
+                <p className="text-xs text-muted-foreground mt-1">
+                  Please use 32 characters at maximum.
+                </p>
+              </div>
+              <div className="flex justify-end mt-auto">
+                <Button size="sm" type="submit" form="settings-team-name-form">
+                  Save
+                </Button>
               </div>
             </div>
           </TabsContent>
@@ -253,8 +233,8 @@ export default async function SettingsPage() {
             </div>
           </TabsContent>
 
-          <TabsContent value="members">
-            <div className="p-6">
+          <TabsContent value="members" className="h-fit flex flex-col">
+            <div className="p-6 h-fit flex flex-col">
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-semibold">Team Members</h3>
@@ -262,14 +242,27 @@ export default async function SettingsPage() {
                     Manage your team members and their permissions.
                   </p>
                 </div>
-                <div className="text-center py-12">
-                  <Users className="size-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="font-medium mb-2">No team members</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Invite team members to collaborate on your projects.
-                  </p>
-                  <Button>Invite Members</Button>
-                </div>
+                {user.organization?.users.length === 0 ? (
+                  <div className="text-center py-12">
+                    <Users className="size-12 text-muted-foreground mx-auto mb-4" />
+                    <h3 className="font-medium mb-2">No team members</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Invite team members to collaborate on your projects.
+                    </p>
+                  </div>
+                ) : (
+                  <div>
+                    {user.organization?.users.map((teamUser) => (
+                      <UserHoverCard
+                        key={teamUser.id}
+                        user={{
+                          ...teamUser,
+                          isActive: teamUser.state === EntityState.ACTIVE,
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </TabsContent>
@@ -345,7 +338,7 @@ export default async function SettingsPage() {
 
                   <div className="flex items-center justify-between p-4 border rounded-lg">
                     <div className="space-y-1">
-                      <h3 className="font-medium">Active Sessions</h3>
+                      <h3 className="font-medium">Last access time</h3>
                       <p className="text-sm text-muted-foreground">
                         Last access: {dayjsApi(user.lastAccess).fromNow()}
                       </p>
