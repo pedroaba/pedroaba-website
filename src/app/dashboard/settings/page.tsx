@@ -1,37 +1,8 @@
-import { Button } from '@pedroaba/components/ui/button'
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@pedroaba/components/ui/dialog'
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '@pedroaba/components/ui/tabs'
 import { auth } from '@pedroaba/lib/authjs'
-import { dayjsApi } from '@pedroaba/lib/dayjs'
 import { prisma } from '@pedroaba/lib/prisma'
-import { EntityState } from '@prisma/client'
-import {
-  Bell,
-  CreditCard,
-  FileText,
-  Shield,
-  User,
-  Users,
-  Webhook,
-  XIcon,
-} from 'lucide-react'
 
-import { ChangePasswordForm } from './change-password-form'
-import { UserHoverCard } from './components/user-hover-card'
-import { TeamNameForm } from './team-name-form'
+import { DesktopSettingsTabs } from './components/desktop-settings-tabs'
+import { MobileSettingsAccordion } from './components/mobile-settings-accordion'
 
 export default async function SettingsPage() {
   const session = await auth()
@@ -42,10 +13,15 @@ export default async function SettingsPage() {
   }
 
   const user = await prisma.user.findUnique({
-    where: {
-      email: userEmail,
-    },
-    include: {
+    where: { email: userEmail },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      createdAt: true,
+      lastPasswordChange: true,
+      lastAccess: true,
+      updatedAt: true,
       organization: {
         select: {
           name: true,
@@ -65,352 +41,18 @@ export default async function SettingsPage() {
   }
 
   return (
-    <div className="flex flex-col gap-4 @container h-fit">
+    <div className="flex flex-col gap-6 @container h-fit">
       <div className="flex flex-row max-md:flex-col items-center max-md:items-start md:justify-between gap-4">
         <div className="flex flex-col gap-1">
           <h1 className="text-2xl font-bold">Settings</h1>
+          <p className="text-muted-foreground">
+            Manage your account settings and preferences.
+          </p>
         </div>
       </div>
 
-      <Tabs
-        defaultValue="general"
-        orientation="vertical"
-        className="w-full flex-row"
-      >
-        <TabsList className="text-foreground flex-col gap-1 rounded-none bg-transparent px-1 py-0 w-64 h-fit overflow-y-auto">
-          <TabsTrigger
-            value="general"
-            className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative w-full justify-start after:absolute after:inset-y-0 after:start-0 after:-ms-1 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-          >
-            <User
-              className="-ms-0.5 me-1.5 opacity-60"
-              size={16}
-              aria-hidden="true"
-            />
-            General
-          </TabsTrigger>
-
-          <TabsTrigger
-            value="billing"
-            className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative w-full justify-start after:absolute after:inset-y-0 after:start-0 after:-ms-1 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-          >
-            <CreditCard
-              className="-ms-0.5 me-1.5 opacity-60"
-              size={16}
-              aria-hidden="true"
-            />
-            Billing
-          </TabsTrigger>
-
-          <TabsTrigger
-            value="invoices"
-            className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative w-full justify-start after:absolute after:inset-y-0 after:start-0 after:-ms-1 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-          >
-            <FileText
-              className="-ms-0.5 me-1.5 opacity-60"
-              size={16}
-              aria-hidden="true"
-            />
-            Invoices
-          </TabsTrigger>
-
-          <TabsTrigger
-            value="members"
-            className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative w-full justify-start after:absolute after:inset-y-0 after:start-0 after:-ms-1 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-          >
-            <Users
-              className="-ms-0.5 me-1.5 opacity-60"
-              size={16}
-              aria-hidden="true"
-            />
-            Members
-          </TabsTrigger>
-
-          <TabsTrigger
-            value="security"
-            className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative w-full justify-start after:absolute after:inset-y-0 after:start-0 after:-ms-1 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-          >
-            <Shield
-              className="-ms-0.5 me-1.5 opacity-60"
-              size={16}
-              aria-hidden="true"
-            />
-            Security & Privacy
-          </TabsTrigger>
-
-          <TabsTrigger
-            value="webhooks"
-            className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative w-full justify-start after:absolute after:inset-y-0 after:start-0 after:-ms-1 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-          >
-            <Webhook
-              className="-ms-0.5 me-1.5 opacity-60"
-              size={16}
-              aria-hidden="true"
-            />
-            Webhooks
-          </TabsTrigger>
-
-          <TabsTrigger
-            value="notifications"
-            className="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative w-full justify-start after:absolute after:inset-y-0 after:start-0 after:-ms-1 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-          >
-            <Bell
-              className="-ms-0.5 me-1.5 opacity-60"
-              size={16}
-              aria-hidden="true"
-            />
-            My Notifications
-          </TabsTrigger>
-        </TabsList>
-
-        <div className="flex-1 rounded-md border text-start h-fit flex flex-col">
-          <TabsContent value="general" className="h-full">
-            {/* Team Name Section */}
-            <div className="p-6 h-full flex flex-col">
-              <div className="">
-                <h3 className="text-lg font-semibold">Team Name</h3>
-                <p className="text-sm text-muted-foreground">
-                  This is your team&apos;s visible name within the application.
-                  For example, the name of your company or department.
-                </p>
-              </div>
-              <div className="max-w-md my-4">
-                <TeamNameForm
-                  defaultValue={user.organization?.name}
-                  organizationId={user.organization?.id}
-                />
-                <p className="text-xs text-muted-foreground mt-1">
-                  Please use 32 characters at maximum.
-                </p>
-              </div>
-              <div className="flex justify-end mt-auto">
-                <Button size="sm" type="submit" form="settings-team-name-form">
-                  Save
-                </Button>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="billing">
-            <div className="p-6">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold">Billing Information</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Manage your billing settings and payment methods.
-                  </p>
-                </div>
-                <div className="text-center py-12">
-                  <CreditCard className="size-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="font-medium mb-2">No billing information</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Set up your billing information to get started.
-                  </p>
-                  <Button>Add Payment Method</Button>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="invoices">
-            <div className="p-6">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold">Invoices</h3>
-                  <p className="text-sm text-muted-foreground">
-                    View and download your invoices.
-                  </p>
-                </div>
-                <div className="text-center py-12">
-                  <FileText className="size-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="font-medium mb-2">No invoices yet</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Your invoices will appear here once you start using paid
-                    features.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="members" className="h-fit flex flex-col">
-            <div className="p-6 h-fit flex flex-col">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold">Team Members</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Manage your team members and their permissions.
-                  </p>
-                </div>
-                {user.organization?.users.length === 0 ? (
-                  <div className="text-center py-12">
-                    <Users className="size-12 text-muted-foreground mx-auto mb-4" />
-                    <h3 className="font-medium mb-2">No team members</h3>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Invite team members to collaborate on your projects.
-                    </p>
-                  </div>
-                ) : (
-                  <div>
-                    {user.organization?.users.map((teamUser) => (
-                      <UserHoverCard
-                        key={teamUser.id}
-                        user={{
-                          ...teamUser,
-                          isActive: teamUser.state === EntityState.ACTIVE,
-                        }}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="security">
-            <div className="p-6">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold">Security & Privacy</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Manage your account security and privacy settings.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 border rounded-lg">
-                    <div className="space-y-1">
-                      <h3 className="font-medium">Password</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Last updated:{' '}
-                        {user.lastPasswordChange
-                          ? dayjsApi(user.lastPasswordChange).fromNow()
-                          : 'Never'}
-                      </p>
-                    </div>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          id="change-password-close-button"
-                        >
-                          Change Password
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent
-                        showCloseButton={false}
-                        className="flex flex-col gap-0 p-0 overflow-y-visible sm:max-w-lg [&>button:last-child]:top-3.5 w-screen"
-                      >
-                        <DialogHeader className="contents space-y-0 text-left">
-                          <DialogTitle className="border-b p-4 text-base flex items-start justify-between">
-                            <div>
-                              Change Password
-                              <DialogDescription className="">
-                                Change your password to secure your account.
-                              </DialogDescription>
-                            </div>
-                            <DialogClose asChild>
-                              <Button
-                                variant="outline"
-                                icon={XIcon}
-                                size="icon"
-                              />
-                            </DialogClose>
-                          </DialogTitle>
-                        </DialogHeader>
-
-                        <ChangePasswordForm />
-                      </DialogContent>
-                    </Dialog>
-                  </div>
-
-                  {/* <div className="flex items-center justify-between p-4 border rounded-lg">
-                    <div className="space-y-1">
-                      <h3 className="font-medium">Two-Factor Authentication</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Add an extra layer of security to your account
-                      </p>
-                    </div>
-                    <Button variant="outline" size="sm">
-                      Enable 2FA
-                    </Button>
-                  </div> */}
-
-                  <div className="flex items-center justify-between p-4 border rounded-lg">
-                    <div className="space-y-1">
-                      <h3 className="font-medium">Last access time</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Last access: {dayjsApi(user.lastAccess).fromNow()}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="webhooks">
-            <div className="p-6">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold">Webhooks</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Configure webhooks to receive real-time updates.
-                  </p>
-                </div>
-                <div className="text-center py-12">
-                  <Webhook className="size-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="font-medium mb-2">No webhooks configured</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Set up webhooks to receive notifications about events.
-                  </p>
-                  <Button>Create Webhook</Button>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="notifications">
-            <div className="p-6">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold">
-                    Notification Preferences
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Customize how you receive notifications.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 border rounded-lg">
-                    <div className="space-y-1">
-                      <h3 className="font-medium">Email Notifications</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Receive email updates about your projects and clients
-                      </p>
-                    </div>
-                    <Button variant="outline" size="sm">
-                      Configure
-                    </Button>
-                  </div>
-
-                  <div className="flex items-center justify-between p-4 border rounded-lg">
-                    <div className="space-y-1">
-                      <h3 className="font-medium">Push Notifications</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Receive push notifications in your browser
-                      </p>
-                    </div>
-                    <Button variant="outline" size="sm">
-                      Configure
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-        </div>
-      </Tabs>
+      <MobileSettingsAccordion user={user} />
+      <DesktopSettingsTabs user={user} />
     </div>
   )
 }

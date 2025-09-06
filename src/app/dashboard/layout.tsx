@@ -1,7 +1,6 @@
 import { auth, signOut } from '@pedroaba/lib/authjs'
 import { prisma } from '@pedroaba/lib/prisma'
 import { redirect } from 'next/navigation'
-import { after } from 'next/server'
 import type { ReactNode } from 'react'
 
 import { AuthWrapper } from './components/auth-wrapper'
@@ -45,17 +44,6 @@ export default async function DashboardLayout({
 
     organizationName = organization?.name || 'CLIENTE INDIVIDUAL'
   }
-
-  after(async () => {
-    await prisma.user.update({
-      where: {
-        id: user.id,
-      },
-      data: {
-        lastAccess: new Date(),
-      },
-    })
-  })
 
   return (
     <AuthWrapper>
