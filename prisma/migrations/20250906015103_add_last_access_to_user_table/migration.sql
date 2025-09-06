@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "public"."users" ADD COLUMN     "last_access" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;

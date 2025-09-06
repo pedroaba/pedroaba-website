@@ -28,8 +28,10 @@ model User {
   // Optional for WebAuthn support
   Authenticator Authenticator[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  lastAccess         DateTime  @default(now()) @map("last_access")
+  lastPasswordChange DateTime? @map("last_password_change")
 
   state EntityState @default(ACTIVE)
 
