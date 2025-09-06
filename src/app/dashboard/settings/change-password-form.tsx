@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from '@bprogress/next'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { changePasswordAction } from '@pedroaba/actions/change-password'
 import { Button } from '@pedroaba/components/ui/button'
@@ -13,6 +14,7 @@ import {
   FormMessage,
 } from '@pedroaba/components/ui/form'
 import { Input } from '@pedroaba/components/ui/input'
+import { invalidateCacheOnPages } from '@pedroaba/utils/invalidate-cache-on-pages'
 import { CheckIcon, EyeIcon, EyeOffIcon, XIcon } from 'lucide-react'
 import { Save } from 'lucide-react'
 import { useMemo, useState } from 'react'
@@ -67,6 +69,8 @@ export function ChangePasswordForm() {
       confirmPassword: '',
     },
   })
+
+  const router = useRouter()
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
@@ -142,6 +146,7 @@ export function ChangePasswordForm() {
       id: 'change-password',
     })
 
+    await invalidateCacheOnPages('/dashboard/settings', router.refresh)
     document.getElementById('change-password-close-button')?.click()
   }
 
