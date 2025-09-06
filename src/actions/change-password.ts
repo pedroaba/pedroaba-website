@@ -38,6 +38,7 @@ export const changePasswordAction = authProcedure
       },
       data: {
         password: hashedPassword,
+        lastPasswordChange: new Date(),
       },
     })
 
