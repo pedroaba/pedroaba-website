@@ -49,7 +49,7 @@ export function Header({ user }: HeaderProps) {
         <div className="flex items-center gap-2 sm:gap-6">
           <div className="hidden md:flex items-center gap-4">
             <Link
-              href="#"
+              href="/changelogs"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Changelog

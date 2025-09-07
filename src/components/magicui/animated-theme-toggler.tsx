@@ -18,11 +18,13 @@ import {
 type AnimatedThemeTogglerProps = {
   className?: string
   asDropdownMenuItem?: boolean
+  text?: string
 }
 
 export const AnimatedThemeToggler = ({
   className,
   asDropdownMenuItem,
+  text,
 }: AnimatedThemeTogglerProps) => {
   const { theme, setTheme } = useTheme()
 
@@ -90,16 +92,17 @@ export const AnimatedThemeToggler = ({
   return (
     <Button
       variant="outline"
-      size="icon"
+      size={text ? 'default' : 'icon'}
       ref={buttonRef}
       onClick={changeTheme}
-      className={cn('cursor-pointer', className)}
+      className={cn('cursor-pointer', text && '[&_svg]:m-0 w-full', className)}
     >
       {theme === 'dark' ? (
         <SunDim className="size-4" />
       ) : (
         <Moon className="size-4" />
       )}
+      {text && <span className="">{text}</span>}
     </Button>
   )
 }
