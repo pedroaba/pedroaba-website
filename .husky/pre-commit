@@ -1,1 +1,9 @@
-echo "pre-commit"
+#!/usr/bin/env sh
+echo "linting and formatting"
+pnpm lint
+
+echo "building"
+pnpm build
+
+echo "well done, my friend"
+exit 0
