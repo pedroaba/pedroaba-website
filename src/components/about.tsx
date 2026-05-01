@@ -61,11 +61,11 @@ export function AboutSection() {
                 <CardContent className="space-y-6">
                   <div className="prose prose-neutral dark:prose-invert max-w-none">
                     <p className="text-muted-foreground leading-relaxed">
-                      Sou um Engenheiro Frontend apaixonado com mais de 4 anos
-                      de experiência criando soluções digitais que os usuários
-                      adoram. Atualmente trabalho na SIBIS como Desenvolvedor
-                      Frontend Pleno enquanto curso Engenharia de Software no
-                      INATEL.
+                      Sou um Engenheiro Frontend apaixonado, atuando com
+                      desenvolvimento de software desde 2021 e criando soluções
+                      digitais que os usuários adoram. Atualmente estou em busca
+                      de novas oportunidades como Desenvolvedor Frontend
+                      enquanto curso Engenharia de Software no INATEL.
                     </p>
 
                     <p className="text-muted-foreground leading-relaxed mt-4">
@@ -156,7 +156,7 @@ export function AboutSection() {
                 <CardHeader className="">
                   <CardTitle className="flex items-center gap-2 text-lg">
                     <Briefcase className="size-4 text-primary" />
-                    Cargo Atual
+                    Status Atual
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -164,15 +164,15 @@ export function AboutSection() {
                     <div>
                       <p className="font-medium text-lg">{profile.role}</p>
                       <p className="text-sm text-muted-foreground">
-                        SIBIS • Tempo integral
+                        Disponível para contratação
                       </p>
                     </div>
                     <Badge variant="secondary" className="w-fit">
-                      Desenvolvedor Frontend Pleno
+                      Aberto a vagas frontend
                     </Badge>
                     <p className="text-xs text-muted-foreground">
-                      Criando aplicativos web modernos com React, Next.js, e
-                      TypeScript
+                      Buscando oportunidades para construir interfaces modernas
+                      com React, Next.js e TypeScript
                     </p>
                   </div>
                 </CardContent>
@@ -223,7 +223,7 @@ export function AboutSection() {
                           name="React"
                           category="primary"
                           description="Biblioteca JavaScript popular para construir interfaces de usuário com arquitetura baseada em componentes e DOM virtual."
-                          experience="4+ anos"
+                          experience="5+ anos"
                           docs="https://react.dev/"
                         />
                         <TechFocusBadge
@@ -283,7 +283,7 @@ export function AboutSection() {
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div>
                       <p className="text-2xl font-bold text-primary">
-                        <NumberTicker value={4} delay={2} />+
+                        <NumberTicker value={5} delay={2} />+
                       </p>
                       <p className="text-xs text-muted-foreground">
                         Anos de Experiência

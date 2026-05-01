@@ -2,24 +2,24 @@ export const site = {
   name: 'Pedro Augusto — Engenheiro Frontend',
   title: 'Pedro Augusto | Engenheiro Frontend',
   description:
-    'Desenvolvedor frontend na SIBIS e estudante de Engenharia de Software no INATEL. Construo aplicações web performáticas e agradáveis com React e Next.js.',
+    'Engenheiro Frontend em busca de novas oportunidades e estudante de Engenharia de Software no INATEL. Construo aplicações web performáticas e agradáveis com React e Next.js.',
   url: 'https://pedroaba.com.br',
   ogImage: '/og.png',
 }
 
 export const profile = {
   name: 'Pedro Augusto',
-  role: 'Engenheiro Frontend @ SIBIS',
+  role: 'Engenheiro Frontend disponível',
   location: 'Brasil',
   linkedin: 'https://www.linkedin.com/in/pedroaba/',
   github: 'https://github.com/pedroaba',
   email: 'pedr.augustobarbosa.aparecido@gmail.com',
   shortBio: [
     'Estudante de Engenharia de Software no INATEL.',
-    'Desenvolvedor Frontend na SIBIS.',
+    'Aberto a oportunidades como Desenvolvedor Frontend.',
     'JS/TS/Python diariamente; explorando Rust para desktop.',
   ],
-  about: `Atualmente estudando Engenharia de Software no INATEL e trabalhando como Desenvolvedor Frontend Pleno na SIBIS. Experiente com HTML, CSS, JavaScript, Python e TypeScript (uso diário). Conhecimento intermediário em C/C++, C# e Java. Iniciando com Rust para aplicações desktop de alta performance. Familiarizado e produtivo com ReactJS, NextJS, Flask, ElectronJS, PySide6/PyQt6, React Native, ExpoJS, NativeBase, PrismaJS, Tailwind CSS e Pandas. Aprendendo e melhorando em Django, Spring Boot, Tauri, Windows Forms e WinUI3.`,
+  about: `Atualmente estudo Engenharia de Software no INATEL e estou em busca de novas oportunidades como Desenvolvedor Frontend. Tenho experiência com HTML, CSS, JavaScript, Python e TypeScript (uso diário). Conhecimento intermediário em C/C++, C# e Java. Iniciando com Rust para aplicações desktop de alta performance. Familiarizado e produtivo com ReactJS, NextJS, Flask, ElectronJS, PySide6/PyQt6, React Native, ExpoJS, NativeBase, Tailwind CSS e Pandas. Aprendendo e melhorando em Django, Spring Boot, Tauri, Windows Forms e WinUI3.`,
 }
 
 export const curatedRepos = [
@@ -38,14 +38,14 @@ export const curatedRepos = [
 export const professionalExperience = [
   {
     title: 'Desenvolvedor Frontend Pleno',
-    company: 'SIBIS',
-    period: 'Set 2024 - Presente',
+    company: 'SIBIS LTDA / Vale Labs',
+    period: 'Set 2024 - 2026',
     description:
-      'Construindo aplicações web modernas com React, Next.js e TypeScript.',
+      'Atuei na construção frontend da Valeiot, uma plataforma Cloud IoT low-code para visualização, gerenciamento e armazenamento de dados de dispositivos conectados.',
     highlights: [
-      'Desenvolvi aplicações web responsivas usando React e Next.js',
-      'Colaborei com equipes de design e backend para entregar experiências de usuário fluidas',
-      'Otimizei performance de aplicações e implementei melhores práticas',
+      'Participei da construção da plataforma low-code, incluindo dashboards, visualização de dados, gestão de dispositivos, portais, usuários e permissões',
+      'Criei telas responsivas, componentes reutilizáveis e fluxos operacionais para empresas monitorarem, organizarem e automatizarem processos com dados de campo',
+      'Trabalhei com React, Next.js, TypeScript, APIs REST, UI Components, Cloud IoT e arquitetura de produto low-code',
     ],
   },
   {

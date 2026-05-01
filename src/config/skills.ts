@@ -7,7 +7,7 @@ export const skillGroups = {
         level: 'expert',
         description:
           'Linguagem de programação dinâmica para desenvolvimento web. Essencial para criar sites interativos e aplicações web modernas.',
-        experience: '4+ anos',
+        experience: '5+ anos',
         docs: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
       },
       {
@@ -23,7 +23,7 @@ export const skillGroups = {
         level: 'expert',
         description:
           'Linguagem de programação versátil usada para desenvolvimento web, análise de dados, automação e serviços backend.',
-        experience: '4+ anos',
+        experience: '5+ anos',
         docs: 'https://docs.python.org/3/',
       },
       {
@@ -31,7 +31,7 @@ export const skillGroups = {
         level: 'expert',
         description:
           'Tecnologias web fundamentais para estruturar e estilizar páginas web. Base de todo desenvolvimento web.',
-        experience: '4+ anos',
+        experience: '5+ anos',
         docs: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
       },
       {
@@ -39,7 +39,7 @@ export const skillGroups = {
         level: 'expert',
         description:
           'Biblioteca JavaScript popular para construir interfaces de usuário com arquitetura baseada em componentes e DOM virtual.',
-        experience: '4+ anos',
+        experience: '5+ anos',
         docs: 'https://react.dev/',
       },
       {

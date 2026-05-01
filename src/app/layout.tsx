@@ -28,6 +28,8 @@ export const metadata: Metadata = {
     'JavaScript',
     'Web Development',
     'SIBIS',
+    'Valeiot',
+    'Open to Work',
     'INATEL',
     'Software Engineer',
   ],

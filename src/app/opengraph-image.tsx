@@ -62,7 +62,7 @@ export default async function Image() {
               textAlign: 'center',
             }}
           >
-            Frontend Engineer @ SIBIS
+            Frontend Engineer · Open to Work
           </div>
 
           {/* Tech Stack */}
