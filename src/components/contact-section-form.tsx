@@ -66,14 +66,14 @@ export function ContactSectionForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSendMessage)}
-        className="space-y-6"
+        className="min-w-0 space-y-6"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="min-w-0">
                 <FormLabel>Nome</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="Seu nome" />
@@ -87,7 +87,7 @@ export function ContactSectionForm() {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="min-w-0">
                 <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="Seu email" />
@@ -102,7 +102,7 @@ export function ContactSectionForm() {
           control={form.control}
           name="subject"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="min-w-0">
               <FormLabel>Assunto</FormLabel>
               <FormControl>
                 <Input
@@ -119,7 +119,7 @@ export function ContactSectionForm() {
           control={form.control}
           name="message"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="min-w-0">
               <FormLabel>Mensagem</FormLabel>
               <FormControl>
                 <Textarea

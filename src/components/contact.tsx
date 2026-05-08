@@ -35,10 +35,10 @@ export function ContactSection() {
             </p>
           </AnimationDiv>
 
-          <div className="grid lg:grid-cols-2 gap-4">
+          <div className="grid gap-4 lg:grid-cols-2">
             {/* Contact Form */}
-            <AnimationDiv variants={fadeInUp}>
-              <Card>
+            <AnimationDiv variants={fadeInUp} className="min-w-0">
+              <Card className="w-full">
                 <CardHeader>
                   <CardTitle>Comece uma conversa</CardTitle>
                   <CardDescription>
@@ -53,7 +53,7 @@ export function ContactSection() {
             </AnimationDiv>
 
             {/* Contact Information */}
-            <div className="space-y-4">
+            <div className="min-w-0 space-y-4">
               <AnimationDiv variants={fadeInUp}>
                 <Card>
                   <CardHeader>
